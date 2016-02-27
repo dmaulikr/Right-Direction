@@ -11,9 +11,10 @@ import UIKit
 class GameDashboardViewController: RootViewController {
 
   override func viewDidLoad() {
-      super.viewDidLoad()
+    super.viewDidLoad()
 
-      // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
+    self.title = NSLocalizedString("Dashboard", comment: "Dashboard")
   }
 
   override func didReceiveMemoryWarning() {

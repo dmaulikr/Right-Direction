@@ -11,9 +11,9 @@ import UIKit
 class ScoreBoardViewController: RootViewController {
 
   override func viewDidLoad() {
-      super.viewDidLoad()
+    super.viewDidLoad()
 
-      // Do any additional setup after loading the view.
+    self.title = NSLocalizedString("Scoreboard", comment: "Scoreboard")
   }
 
   override func didReceiveMemoryWarning() {
