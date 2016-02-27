@@ -79,6 +79,9 @@
 		27215C2E1C81E50C005D66BE /* RightDirection */ = {
 			isa = PBXGroup;
 			children = (
+				27215C531C81EA82005D66BE /* Controller */,
+				27215C521C81EA7D005D66BE /* Model */,
+				27215C511C81EA78005D66BE /* View */,
 				27215C2F1C81E50C005D66BE /* AppDelegate.swift */,
 				27215C311C81E50C005D66BE /* FirstViewController.swift */,
 				27215C331C81E50C005D66BE /* SecondViewController.swift */,
@@ -97,6 +100,27 @@
 				27215C481C81E50C005D66BE /* Info.plist */,
 			);
 			path = RightDirectionTests;
+			sourceTree = "<group>";
+		};
+		27215C511C81EA78005D66BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27215C521C81EA7D005D66BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27215C531C81EA82005D66BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +418,7 @@
 				27215C4D1C81E50C005D66BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27215C4E1C81E50C005D66BE /* Build configuration list for PBXNativeTarget "RightDirectionTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +427,7 @@
 				27215C501C81E50C005D66BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
