@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		27215C301C81E50C005D66BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C2F1C81E50C005D66BE /* AppDelegate.swift */; };
-		27215C321C81E50C005D66BE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C311C81E50C005D66BE /* FirstViewController.swift */; };
-		27215C341C81E50C005D66BE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C331C81E50C005D66BE /* SecondViewController.swift */; };
 		27215C371C81E50C005D66BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27215C351C81E50C005D66BE /* Main.storyboard */; };
 		27215C391C81E50C005D66BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27215C381C81E50C005D66BE /* Assets.xcassets */; };
 		27215C3C1C81E50C005D66BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27215C3A1C81E50C005D66BE /* LaunchScreen.storyboard */; };
 		27215C471C81E50C005D66BE /* RightDirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C461C81E50C005D66BE /* RightDirectionTests.swift */; };
+		27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C541C81EB0A005D66BE /* RootViewController.swift */; };
+		27215C571C81EB1B005D66BE /* GameDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */; };
+		27215C591C81EB4A005D66BE /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +30,6 @@
 /* Begin PBXFileReference section */
 		27215C2C1C81E50C005D66BE /* RightDirection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightDirection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27215C2F1C81E50C005D66BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27215C311C81E50C005D66BE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		27215C331C81E50C005D66BE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		27215C361C81E50C005D66BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27215C381C81E50C005D66BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27215C3B1C81E50C005D66BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +37,9 @@
 		27215C421C81E50C005D66BE /* RightDirectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightDirectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27215C461C81E50C005D66BE /* RightDirectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDirectionTests.swift; sourceTree = "<group>"; };
 		27215C481C81E50C005D66BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27215C541C81EB0A005D66BE /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDashboardViewController.swift; sourceTree = "<group>"; };
+		27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +81,10 @@
 		27215C2E1C81E50C005D66BE /* RightDirection */ = {
 			isa = PBXGroup;
 			children = (
+				27215C531C81EA82005D66BE /* Controller */,
+				27215C521C81EA7D005D66BE /* Model */,
+				27215C511C81EA78005D66BE /* View */,
 				27215C2F1C81E50C005D66BE /* AppDelegate.swift */,
-				27215C311C81E50C005D66BE /* FirstViewController.swift */,
-				27215C331C81E50C005D66BE /* SecondViewController.swift */,
 				27215C351C81E50C005D66BE /* Main.storyboard */,
 				27215C381C81E50C005D66BE /* Assets.xcassets */,
 				27215C3A1C81E50C005D66BE /* LaunchScreen.storyboard */,
@@ -97,6 +100,30 @@
 				27215C481C81E50C005D66BE /* Info.plist */,
 			);
 			path = RightDirectionTests;
+			sourceTree = "<group>";
+		};
+		27215C511C81EA78005D66BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27215C521C81EA7D005D66BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27215C531C81EA82005D66BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27215C541C81EB0A005D66BE /* RootViewController.swift */,
+				27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */,
+				27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27215C341C81E50C005D66BE /* SecondViewController.swift in Sources */,
+				27215C571C81EB1B005D66BE /* GameDashboardViewController.swift in Sources */,
 				27215C301C81E50C005D66BE /* AppDelegate.swift in Sources */,
-				27215C321C81E50C005D66BE /* FirstViewController.swift in Sources */,
+				27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */,
+				27215C591C81EB4A005D66BE /* ScoreBoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +422,7 @@
 				27215C4D1C81E50C005D66BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27215C4E1C81E50C005D66BE /* Build configuration list for PBXNativeTarget "RightDirectionTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +431,7 @@
 				27215C501C81E50C005D66BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
