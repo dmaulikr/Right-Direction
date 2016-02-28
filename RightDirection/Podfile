@@ -8,3 +8,6 @@ end
 target 'RightDirectionTests' do
     testing_pods
 end
+
+pod 'SwiftHEXColors', '~> 1.0'
+
