@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHEXColors
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,16 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // Override point for customization after application launch.
       
       //set custom color to all navigation bars
-      UINavigationBar.appearance().barTintColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+      UINavigationBar.appearance().barTintColor = UIColor(hexString: kRedMainColor)
       UINavigationBar.appearance().tintColor = UIColor.whiteColor() // we are setting text color to white, better than custom black on this background
       UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
       
       //set custom color and text color to TabBar
       UITabBar.appearance().tintColor = UIColor.whiteColor()
-      UITabBar.appearance().barTintColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+      UITabBar.appearance().barTintColor = UIColor(hexString: kRedMainColor)
       
       //custom tint color to whole application
-      window?.tintColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+      window?.tintColor = UIColor(hexString: kRedMainColor)
       
       //set status bar to white color, dont forget to add UIViewControllerBasedStatusBarAppearance => false in Info.plist
       UIApplication.sharedApplication().statusBarStyle = .LightContent
