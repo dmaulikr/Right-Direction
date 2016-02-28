@@ -19,19 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // Override point for customization after application launch.
       
       //set custom color to all navigation bars
-      UINavigationBar.appearance().barTintColor = UIColor(hexString: kRedMainColor)
+      UINavigationBar.appearance().barTintColor = UIColor(hexString: kMainColor)
       UINavigationBar.appearance().tintColor = UIColor.whiteColor() // we are setting text color to white, better than custom black on this background
       UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
       
       //set custom color and text color to TabBar
       UITabBar.appearance().tintColor = UIColor.whiteColor()
-      UITabBar.appearance().barTintColor = UIColor(hexString: kRedMainColor)
+      UITabBar.appearance().barTintColor = UIColor(hexString: kMainColor)
       
       //custom tint color to whole application
-      window?.tintColor = UIColor(hexString: kRedMainColor)
-      
-      //set status bar to white color, dont forget to add UIViewControllerBasedStatusBarAppearance => false in Info.plist
-      UIApplication.sharedApplication().statusBarStyle = .LightContent
+      window?.tintColor = UIColor(hexString: kMainColor)
       
       return true
     }
