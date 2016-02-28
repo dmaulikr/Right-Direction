@@ -8,4 +8,5 @@
 
 import Foundation
 
-let kRedMainColor = "#ea2e49"
+let kMainColor = "#ea2e49"
+let kMainTextColor = "#FFFFFF"
