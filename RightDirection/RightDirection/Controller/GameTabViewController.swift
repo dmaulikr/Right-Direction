@@ -14,6 +14,7 @@ class GameTabViewController: UIViewController {
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var controlsView: UIView!
   @IBOutlet weak var pointsLabel: UILabel!
+  @IBOutlet weak var gameTabVC: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,6 +32,12 @@ class GameTabViewController: UIViewController {
     }
     if let close = self.closeButton {
       close.tintColor = UIColor(hexString: kMainTextColor)
+    }
+    
+    let vc = GameBoardViewController()
+    self.addChildViewController(vc)
+    if let gameTab = self.gameTabVC {
+      gameTab.addSubview(vc.view)
     }
   }
 

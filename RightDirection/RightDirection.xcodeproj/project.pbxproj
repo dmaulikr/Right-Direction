@@ -20,6 +20,8 @@
 		273E697F1C8395640015C245 /* GameTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273E697E1C8395640015C245 /* GameTabViewController.xib */; };
 		273E69821C83A7EF0015C245 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E69811C83A7EF0015C245 /* StatusBar.swift */; };
 		27BB4F201C838E88000D1B31 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB4F1F1C838E88000D1B31 /* Colors.swift */; };
+		27EE73681C88197D00A0FD3F /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE73661C88197D00A0FD3F /* GameBoardViewController.swift */; };
+		27EE73691C88197D00A0FD3F /* GameBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EE73671C88197D00A0FD3F /* GameBoardViewController.xib */; };
 		3ACB573D39EFD24689867437 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42B03B9DB795A06C11E9ADF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		273E697E1C8395640015C245 /* GameTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTabViewController.xib; sourceTree = "<group>"; };
 		273E69811C83A7EF0015C245 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		27BB4F1F1C838E88000D1B31 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		27EE73661C88197D00A0FD3F /* GameBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
+		27EE73671C88197D00A0FD3F /* GameBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardViewController.xib; sourceTree = "<group>"; };
 		40097F922E05FBD6B93C2D7E /* Pods-RightDirectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RightDirectionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RightDirectionTests/Pods-RightDirectionTests.release.xcconfig"; sourceTree = "<group>"; };
 		74BC45B634282F5150C38E68 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7ABC83FEC357EF5A2675D3E2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */,
 				27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */,
 				273E697C1C8395330015C245 /* GameTabViewController.swift */,
+				27EE73661C88197D00A0FD3F /* GameBoardViewController.swift */,
+				27EE73671C88197D00A0FD3F /* GameBoardViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27215C3C1C81E50C005D66BE /* LaunchScreen.storyboard in Resources */,
+				27EE73691C88197D00A0FD3F /* GameBoardViewController.xib in Resources */,
 				27215C391C81E50C005D66BE /* Assets.xcassets in Resources */,
 				273E697F1C8395640015C245 /* GameTabViewController.xib in Resources */,
 				27215C371C81E50C005D66BE /* Main.storyboard in Resources */,
@@ -381,6 +388,7 @@
 			files = (
 				273E69821C83A7EF0015C245 /* StatusBar.swift in Sources */,
 				27215C571C81EB1B005D66BE /* GameDashboardViewController.swift in Sources */,
+				27EE73681C88197D00A0FD3F /* GameBoardViewController.swift in Sources */,
 				27BB4F201C838E88000D1B31 /* Colors.swift in Sources */,
 				27215C301C81E50C005D66BE /* AppDelegate.swift in Sources */,
 				27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */,

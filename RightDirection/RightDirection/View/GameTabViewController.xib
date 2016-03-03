@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="closeButton" destination="BPW-nZ-ys3" id="4l1-gR-8fe"/>
                 <outlet property="controlsView" destination="aP2-Y0-lPg" id="yu0-Gy-ZgX"/>
+                <outlet property="gameTabVC" destination="FNd-dq-TAH" id="NNz-ct-0nt"/>
                 <outlet property="pointsLabel" destination="8hp-hz-WFQ" id="CeZ-Bo-3vg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="EKk-zW-tHj"/>
             </connections>
@@ -52,7 +53,6 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNd-dq-TAH">
                     <rect key="frame" x="0.0" y="44" width="600" height="556"/>
-                    <color key="backgroundColor" red="0.87058823529999996" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
