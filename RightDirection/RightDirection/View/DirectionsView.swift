@@ -9,13 +9,30 @@
 import UIKit
 
 class DirectionsView: UIView {
+  
+  func setup() {          
+    if let item = NSBundle.mainBundle().loadNibNamed("DirectionItem", owner: self, options: nil)[0] as? DirectionItem {
+      item.setup("arrowTest")
+      self.addSubview(item)
+      item.translatesAutoresizingMaskIntoConstraints = false
+      item.leadingAnchor.constraintEqualToAnchor(self.leadingAnchor).active = true
+      
+//      item.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor).active = true
+      item.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
+      item.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
+      if let item2 = NSBundle.mainBundle().loadNibNamed("DirectionItem", owner: self, options: nil)[0] as? DirectionItem {
+        item2.setup("first")
+        self.addSubview(item2)
+        item2.translatesAutoresizingMaskIntoConstraints = false
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+        item2.leadingAnchor.constraintEqualToAnchor(item.trailingAnchor).active = true
+        item.trailingAnchor.constraintEqualToAnchor(item2.leadingAnchor).active = true
+        item2.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
+        item2.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
+        item2.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor).active = true
+        item2.widthAnchor.constraintEqualToAnchor(item.widthAnchor, multiplier: 1).active = true
+      }
+      
     }
-    */
-
+  }
 }

@@ -39,6 +39,7 @@ class GameBoardViewController: UIViewController {
     }
     
     if let directions = NSBundle.mainBundle().loadNibNamed("DirectionsView", owner: self, options: nil)[0] as? DirectionsView {
+      directions.setup()
       self.directionsView.addSubview(directions)
       directions.translatesAutoresizingMaskIntoConstraints = false
       directions.leadingAnchor.constraintEqualToAnchor(self.directionsView.leadingAnchor).active = true
