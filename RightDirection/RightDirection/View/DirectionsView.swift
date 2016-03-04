@@ -11,7 +11,7 @@ import UIKit
 class DirectionsView: UIView {
   
   func setup() {          
-    if let item = NSBundle.mainBundle().loadNibNamed("DirectionItem", owner: self, options: nil)[0] as? DirectionItem {
+    if let item = NSBundle.mainBundle().loadNibNamed("DirectionItemView", owner: self, options: nil)[0] as? DirectionItemView {
       item.setup("arrowTest")
       self.addSubview(item)
       item.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +20,7 @@ class DirectionsView: UIView {
 //      item.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor).active = true
       item.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
       item.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
-      if let item2 = NSBundle.mainBundle().loadNibNamed("DirectionItem", owner: self, options: nil)[0] as? DirectionItem {
+      if let item2 = NSBundle.mainBundle().loadNibNamed("DirectionItemView", owner: self, options: nil)[0] as? DirectionItemView {
         item2.setup("first")
         self.addSubview(item2)
         item2.translatesAutoresizingMaskIntoConstraints = false

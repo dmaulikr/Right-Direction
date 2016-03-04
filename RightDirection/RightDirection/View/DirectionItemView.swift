@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DirectionItem: UIView {
+class DirectionItemView: UIView {
 
   @IBOutlet weak var directionImage: UIImageView!
     
