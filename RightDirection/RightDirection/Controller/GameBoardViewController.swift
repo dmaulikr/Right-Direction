@@ -15,7 +15,7 @@ class GameBoardViewController: UIViewController {
   @IBOutlet weak var directionsViewAxisX: NSLayoutConstraint!
   @IBOutlet weak var directionsViewAxisY: NSLayoutConstraint!
   
-  @IBOutlet weak var directionsView: UIView!
+  @IBOutlet weak var directionsView: DirectionsView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,6 +36,15 @@ class GameBoardViewController: UIViewController {
   func setupView() {
     for direction in [.Right, .Left, .Up, .Down] as [UISwipeGestureRecognizerDirection] {
       self.addSwipeRecognizerForDirection(direction)
+    }
+    
+    if let directions = NSBundle.mainBundle().loadNibNamed("DirectionsView", owner: self, options: nil)[0] as? DirectionsView {
+      self.directionsView.addSubview(directions)
+      directions.translatesAutoresizingMaskIntoConstraints = false
+      directions.leadingAnchor.constraintEqualToAnchor(self.directionsView.leadingAnchor).active = true
+      directions.trailingAnchor.constraintEqualToAnchor(self.directionsView.trailingAnchor).active = true
+      directions.topAnchor.constraintEqualToAnchor(self.directionsView.topAnchor).active = true
+      directions.bottomAnchor.constraintEqualToAnchor(self.directionsView.bottomAnchor).active = true
     }
   }
   
@@ -61,6 +70,8 @@ class GameBoardViewController: UIViewController {
     self.directionsViewWidth.constant = CGFloat(randomSquareSize)
     self.directionsViewHeight.constant = CGFloat(randomSquareSize)
     
+//    self.view.layoutIfNeeded()
+//    self.view.layoutSubviews()
     
         print("width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
   }
