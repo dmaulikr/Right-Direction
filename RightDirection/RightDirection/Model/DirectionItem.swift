@@ -1,5 +1,5 @@
 //
-//  DirectionsType.swift
+//  DirectionItem.swift
 //  RightDirection
 //
 //  Created by Mike Mikina on 3/4/16.
@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum DirectionsType {
-  case Up
-  case Down
-  case Left
-  case Right
-  case Empty
+struct DirectionItem {
+  let type: DirectionsType
 }

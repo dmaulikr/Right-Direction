@@ -10,6 +10,8 @@ import UIKit
 
 class DirectionsView: UIView {
   
+  var datasource = [[DirectionItem]]()
+  
   func setup() {          
     if let item = NSBundle.mainBundle().loadNibNamed("DirectionItemView", owner: self, options: nil)[0] as? DirectionItemView {
       item.setup("arrowTest")

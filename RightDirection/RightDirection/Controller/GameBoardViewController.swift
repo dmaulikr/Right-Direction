@@ -39,6 +39,7 @@ class GameBoardViewController: UIViewController {
     }
     
     if let directions = NSBundle.mainBundle().loadNibNamed("DirectionsView", owner: self, options: nil)[0] as? DirectionsView {
+      directions.datasource = self.setupMockData()
       directions.setup()
       self.directionsView.addSubview(directions)
       directions.translatesAutoresizingMaskIntoConstraints = false
@@ -47,6 +48,34 @@ class GameBoardViewController: UIViewController {
       directions.topAnchor.constraintEqualToAnchor(self.directionsView.topAnchor).active = true
       directions.bottomAnchor.constraintEqualToAnchor(self.directionsView.bottomAnchor).active = true
     }
+  }
+  
+  func setupMockData() -> [[DirectionItem]] {
+    var items = [[DirectionItem]]()
+    
+    let itemEmpty = DirectionItem(type: .Empty)
+    let itemUp = DirectionItem(type: .Up)
+    let itemDown = DirectionItem(type: .Down)
+    
+    var row = [DirectionItem]()
+    row.append(itemEmpty)
+    row.append(itemUp)
+    row.append(itemEmpty)
+    items.append(row)
+    
+    row = [DirectionItem]()
+    row.append(itemUp)
+    row.append(itemDown)
+    row.append(itemUp)
+    items.append(row)
+    
+    row = [DirectionItem]()
+    row.append(itemEmpty)
+    row.append(itemUp)
+    row.append(itemEmpty)
+    items.append(row)
+    
+    return items
   }
   
   func addSwipeRecognizerForDirection(direction: UISwipeGestureRecognizerDirection) {
