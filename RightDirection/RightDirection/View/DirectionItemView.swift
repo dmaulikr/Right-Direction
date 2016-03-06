@@ -12,9 +12,30 @@ class DirectionItemView: UIView {
 
   @IBOutlet weak var directionImage: UIImageView!
     
-  func setup(imageName: String) {
+  func setup(type: DirectionsType) {
     if let item = self.directionImage {
-      item.image = UIImage(named: imageName)
+      if(type != .Empty) {
+        item.image = self.getImageByType(type)
+      }
     }
+  }
+
+  func getImageByType(type: DirectionsType) -> UIImage {
+    let imageName: String
+    
+    switch(type) {
+      case .Up:
+        imageName = "directionUp"
+      case .Down:
+        imageName = "directionDown"
+      case .Left:
+        imageName = "directionLeft"
+      case .Right:
+        imageName = "directionRight"
+      case .Empty:
+        imageName = ""
+    }
+    
+    return UIImage(named: imageName)!
   }
 }
