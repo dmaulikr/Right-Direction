@@ -19,7 +19,17 @@
 		273E697D1C8395330015C245 /* GameTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E697C1C8395330015C245 /* GameTabViewController.swift */; };
 		273E697F1C8395640015C245 /* GameTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273E697E1C8395640015C245 /* GameTabViewController.xib */; };
 		273E69821C83A7EF0015C245 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E69811C83A7EF0015C245 /* StatusBar.swift */; };
+		27AE74731C89A7B900CE9D92 /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE74721C89A7B900CE9D92 /* DirectionsView.swift */; };
+		27AE74751C89A7CF00CE9D92 /* DirectionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27AE74741C89A7CF00CE9D92 /* DirectionsView.xib */; };
+		27AE74771C89AA7900CE9D92 /* DirectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE74761C89AA7900CE9D92 /* DirectionItemView.swift */; };
+		27AE74791C89AA8600CE9D92 /* DirectionItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27AE74781C89AA8600CE9D92 /* DirectionItemView.xib */; };
+		27AE747B1C8A169800CE9D92 /* DirectionsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE747A1C8A169800CE9D92 /* DirectionsType.swift */; };
+		27AE747D1C8A192800CE9D92 /* DirectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE747C1C8A192800CE9D92 /* DirectionItem.swift */; };
+		27AE747F1C8C479000CE9D92 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE747E1C8C479000CE9D92 /* PinView.swift */; };
 		27BB4F201C838E88000D1B31 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB4F1F1C838E88000D1B31 /* Colors.swift */; };
+		27EE73681C88197D00A0FD3F /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE73661C88197D00A0FD3F /* GameBoardViewController.swift */; };
+		27EE73691C88197D00A0FD3F /* GameBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EE73671C88197D00A0FD3F /* GameBoardViewController.xib */; };
+		27EE736B1C885C0200A0FD3F /* RandomInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE736A1C885C0200A0FD3F /* RandomInt.swift */; };
 		3ACB573D39EFD24689867437 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42B03B9DB795A06C11E9ADF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +59,17 @@
 		273E697C1C8395330015C245 /* GameTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTabViewController.swift; sourceTree = "<group>"; };
 		273E697E1C8395640015C245 /* GameTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTabViewController.xib; sourceTree = "<group>"; };
 		273E69811C83A7EF0015C245 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
+		27AE74721C89A7B900CE9D92 /* DirectionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
+		27AE74741C89A7CF00CE9D92 /* DirectionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectionsView.xib; sourceTree = "<group>"; };
+		27AE74761C89AA7900CE9D92 /* DirectionItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionItemView.swift; sourceTree = "<group>"; };
+		27AE74781C89AA8600CE9D92 /* DirectionItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectionItemView.xib; sourceTree = "<group>"; };
+		27AE747A1C8A169800CE9D92 /* DirectionsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsType.swift; sourceTree = "<group>"; };
+		27AE747C1C8A192800CE9D92 /* DirectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionItem.swift; sourceTree = "<group>"; };
+		27AE747E1C8C479000CE9D92 /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
 		27BB4F1F1C838E88000D1B31 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		27EE73661C88197D00A0FD3F /* GameBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
+		27EE73671C88197D00A0FD3F /* GameBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameBoardViewController.xib; path = ../Controller/GameBoardViewController.xib; sourceTree = "<group>"; };
+		27EE736A1C885C0200A0FD3F /* RandomInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomInt.swift; sourceTree = "<group>"; };
 		40097F922E05FBD6B93C2D7E /* Pods-RightDirectionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RightDirectionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RightDirectionTests/Pods-RightDirectionTests.release.xcconfig"; sourceTree = "<group>"; };
 		74BC45B634282F5150C38E68 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7ABC83FEC357EF5A2675D3E2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +148,11 @@
 			children = (
 				27BB4F1F1C838E88000D1B31 /* Colors.swift */,
 				273E697E1C8395640015C245 /* GameTabViewController.xib */,
+				27EE73671C88197D00A0FD3F /* GameBoardViewController.xib */,
+				27AE74721C89A7B900CE9D92 /* DirectionsView.swift */,
+				27AE74741C89A7CF00CE9D92 /* DirectionsView.xib */,
+				27AE74761C89AA7900CE9D92 /* DirectionItemView.swift */,
+				27AE74781C89AA8600CE9D92 /* DirectionItemView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +160,7 @@
 		27215C521C81EA7D005D66BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				27AE747C1C8A192800CE9D92 /* DirectionItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +172,7 @@
 				27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */,
 				27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */,
 				273E697C1C8395330015C245 /* GameTabViewController.swift */,
+				27EE73661C88197D00A0FD3F /* GameBoardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -154,6 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				273E69811C83A7EF0015C245 /* StatusBar.swift */,
+				27EE736A1C885C0200A0FD3F /* RandomInt.swift */,
+				27AE747A1C8A169800CE9D92 /* DirectionsType.swift */,
+				27AE747E1C8C479000CE9D92 /* PinView.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -265,7 +295,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AE74751C89A7CF00CE9D92 /* DirectionsView.xib in Resources */,
 				27215C3C1C81E50C005D66BE /* LaunchScreen.storyboard in Resources */,
+				27EE73691C88197D00A0FD3F /* GameBoardViewController.xib in Resources */,
+				27AE74791C89AA8600CE9D92 /* DirectionItemView.xib in Resources */,
 				27215C391C81E50C005D66BE /* Assets.xcassets in Resources */,
 				273E697F1C8395640015C245 /* GameTabViewController.xib in Resources */,
 				27215C371C81E50C005D66BE /* Main.storyboard in Resources */,
@@ -380,11 +413,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				273E69821C83A7EF0015C245 /* StatusBar.swift in Sources */,
+				27AE74771C89AA7900CE9D92 /* DirectionItemView.swift in Sources */,
+				27AE747F1C8C479000CE9D92 /* PinView.swift in Sources */,
+				27AE747D1C8A192800CE9D92 /* DirectionItem.swift in Sources */,
 				27215C571C81EB1B005D66BE /* GameDashboardViewController.swift in Sources */,
+				27AE74731C89A7B900CE9D92 /* DirectionsView.swift in Sources */,
+				27EE73681C88197D00A0FD3F /* GameBoardViewController.swift in Sources */,
+				27AE747B1C8A169800CE9D92 /* DirectionsType.swift in Sources */,
 				27BB4F201C838E88000D1B31 /* Colors.swift in Sources */,
 				27215C301C81E50C005D66BE /* AppDelegate.swift in Sources */,
 				27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */,
 				273E697D1C8395330015C245 /* GameTabViewController.swift in Sources */,
+				27EE736B1C885C0200A0FD3F /* RandomInt.swift in Sources */,
 				27215C591C81EB4A005D66BE /* ScoreBoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fdt.RightDirection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -533,6 +574,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fdt.RightDirection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
