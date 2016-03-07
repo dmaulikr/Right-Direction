@@ -1,16 +1,19 @@
 PODS:
   - Nimble (3.1.0)
   - Quick (0.9.1)
+  - Reveal-iOS-SDK (1.6.2)
   - SwiftHEXColors (1.0.2)
 
 DEPENDENCIES:
   - Nimble
   - Quick
+  - Reveal-iOS-SDK
   - SwiftHEXColors (~> 1.0)
 
 SPEC CHECKSUMS:
   Nimble: 79d40f4d69d47314229bbabacaa02b8838c779b9
   Quick: a5221fc21788b6aeda934805e68b061839bc3165
+  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   SwiftHEXColors: 1238ce6ee5c698ef9caf00fad72876602ecd9df6
 
 COCOAPODS: 0.39.0
