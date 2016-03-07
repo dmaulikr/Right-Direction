@@ -59,19 +59,41 @@ class GameBoardViewController: UIViewController {
     
     var row = [DirectionItem]()
     row.append(itemEmpty)
+    row.append(itemEmpty)
+    row.append(itemUp)
+    row.append(itemEmpty)
+    row.append(itemEmpty)
+    items.append(row)
+    
+    row = [DirectionItem]()
+    row.append(itemEmpty)
+    row.append(itemUp)
+    row.append(itemEmpty)
     row.append(itemUp)
     row.append(itemEmpty)
     items.append(row)
     
     row = [DirectionItem]()
     row.append(itemUp)
-    row.append(itemDown)
+    row.append(itemEmpty)
+    row.append(itemEmpty)
+    row.append(itemEmpty)
     row.append(itemUp)
+    items.append(row)
+
+    row = [DirectionItem]()
+    row.append(itemEmpty)
+    row.append(itemEmpty)
+    row.append(itemEmpty)
+    row.append(itemEmpty)
+    row.append(itemEmpty)
     items.append(row)
     
     row = [DirectionItem]()
     row.append(itemEmpty)
-    row.append(itemUp)
+    row.append(itemEmpty)
+    row.append(itemEmpty)
+    row.append(itemEmpty)
     row.append(itemEmpty)
     items.append(row)
     
@@ -86,7 +108,7 @@ class GameBoardViewController: UIViewController {
   
   func handleSwipe(swipe: UISwipeGestureRecognizer) {
     print("swipe: \(swipe.direction)")
-    let randomSquareSize = Int.random(50...250)
+    let randomSquareSize = Int.random(200...250)
     
     let maxX = Int(self.view.frame.size.width) - randomSquareSize
     let maxY = Int(self.view.frame.size.height - 44) - randomSquareSize
