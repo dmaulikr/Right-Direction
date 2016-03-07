@@ -38,4 +38,14 @@ class DirectionItemView: UIView {
     
     return UIImage(named: imageName)!
   }
+  
+  class func loadDirectionItem(item: DirectionItem) -> DirectionItemView {
+    if let view = NSBundle.mainBundle().loadNibNamed("DirectionItemView", owner: self, options: nil)[0] as? DirectionItemView {
+      view.setup(item.type)
+      return view
+    }
+    else {
+      return DirectionItemView()
+    }
+  }
 }

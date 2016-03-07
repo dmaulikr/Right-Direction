@@ -12,8 +12,10 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzn-2v-3VK">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Zzn-2v-3VK" secondAttribute="trailing" id="6Ec-4h-4By"/>
                 <constraint firstAttribute="bottom" secondItem="Zzn-2v-3VK" secondAttribute="bottom" id="78x-Dq-kfD"/>
