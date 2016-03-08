@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       //custom tint color to whole application
       window?.tintColor = UIColor(hexString: kMainColor)
       
+      DirectionsManager.sharedInstance.setup()
+      
       return true
     }
 
