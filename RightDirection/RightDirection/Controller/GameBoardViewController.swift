@@ -38,8 +38,12 @@ class GameBoardViewController: UIViewController {
       self.addSwipeRecognizerForDirection(direction)
     }
     
+    self.setupDirections()
+  }
+  
+  func setupDirections() {   
     if let directions = NSBundle.mainBundle().loadNibNamed("DirectionsView", owner: self, options: nil)[0] as? DirectionsView {
-      directions.datasource = self.setupMockData()
+      directions.datasource = DirectionsManager.sharedInstance.getItem()
       directions.setup()
       self.directionsView.addSubview(directions)
       directions.translatesAutoresizingMaskIntoConstraints = false
@@ -126,6 +130,7 @@ class GameBoardViewController: UIViewController {
 //    self.view.layoutSubviews()
     
         print("width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
+    self.setupDirections()
   }
 
   override func didReceiveMemoryWarning() {

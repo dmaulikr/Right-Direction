@@ -29,7 +29,7 @@ struct DirectionsDataSource: DataSource {
     return results
   }
   
-  func prepareData() -> [DirectionsDataSource.U] {
+  func prepareData() -> [U] {
     var result: [DirectionEntity] = []
     
     if let source = self.getDataFromFile(sourceName), items = source["data"] as? NSArray {
@@ -39,11 +39,12 @@ struct DirectionsDataSource: DataSource {
         if let directions = data["directions"] as? NSArray {
           for row in directions {
             var rowItem = [DirectionItem]()
-            print("row \(row)")
             
             if let columns = row as? NSArray {
               for column in columns {
-                print(column)
+                if let columnValue = column as? Int {
+                  rowItem.append(DirectionItem(type: self.getDirectionTypeByValue(columnValue)))
+                }
               }
             }
             

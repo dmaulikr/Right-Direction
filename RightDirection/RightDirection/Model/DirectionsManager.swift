@@ -10,13 +10,25 @@ import Foundation
 
 class DirectionsManager {
   static let sharedInstance = DirectionsManager()
-  let directionsModel = [DirectionEntity]()
+  var directionsModel = [DirectionEntity]?()
   private init() {}
   var datasource: DirectionsDataSource?
   
   func setup() {
     self.datasource = DirectionsDataSource()
-    self.datasource?.prepareData()
+    self.directionsModel = self.datasource?.prepareData() ?? []
+  }
+  
+  func getItem() -> [[DirectionItem]] {
+    var items = [[DirectionItem]]()
+    var max = self.directionsModel?.count ?? 0
+    max = (max > 0) ? max - 1 : 0
+    let randomElement = Int.random(0...max)
     
+    if let item = self.directionsModel {
+      items = item[randomElement].items
+    }
+    
+    return items
   }
 }
