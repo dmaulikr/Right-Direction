@@ -41,7 +41,9 @@ class GameBoardViewController: UIViewController {
     self.setupDirections()
   }
   
-  func setupDirections() {   
+  func setupDirections() {
+    self.directionsView.cleanUp()
+    
     if let directions = NSBundle.mainBundle().loadNibNamed("DirectionsView", owner: self, options: nil)[0] as? DirectionsView {
       directions.datasource = DirectionsManager.sharedInstance.getItem()
       directions.setup()

@@ -13,6 +13,12 @@ class DirectionsView: UIView {
   var datasource = [[DirectionItem]]()
   var directionViews = [[DirectionItemView]]()
   
+  func cleanUp() {
+    for view in self.subviews {
+      view.removeFromSuperview()
+    }
+  }
+  
   // Setup will go through two dimentional array and load views with directions images.
   // Images have equal width and height, and are placed side by side forming simple matrix.
   func setup() {
