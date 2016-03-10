@@ -9,7 +9,10 @@
 import UIKit
 
 class GameBoardViewController: UIViewController {
-
+  let topBarHeight = 44 //size of top navigation bar, navbar here it's just normal UIView
+  let minDirectionViewSquare = 200 //minimum size of view with directions
+  let maxDirectionViewSquare = 250 //maximum size of view with directions
+  
   @IBOutlet weak var directionsViewHeight: NSLayoutConstraint!
   @IBOutlet weak var directionsViewWidth: NSLayoutConstraint!
   @IBOutlet weak var directionsViewAxisX: NSLayoutConstraint!
@@ -50,18 +53,18 @@ class GameBoardViewController: UIViewController {
       directions.setup()
       self.directionsView.addSubview(directions)
       directions.translatesAutoresizingMaskIntoConstraints = false
-      directions.leadingAnchor.constraintEqualToAnchor(self.directionsView.leadingAnchor).active = true
-      directions.trailingAnchor.constraintEqualToAnchor(self.directionsView.trailingAnchor).active = true
-      directions.topAnchor.constraintEqualToAnchor(self.directionsView.topAnchor).active = true
-      directions.bottomAnchor.constraintEqualToAnchor(self.directionsView.bottomAnchor).active = true
+      directions.pin(self.directionsView, direction: .Left)
+      directions.pin(self.directionsView, direction: .Right)
+      directions.pin(self.directionsView, direction: .Up)
+      directions.pin(self.directionsView, direction: .Down)
     }
   }
   
   func setRandomPosition() {
-    let randomSquareSize = Int.random(200...250)
+    let randomSquareSize = Int.random(self.minDirectionViewSquare...self.maxDirectionViewSquare)
     
     let maxX = Int(self.view.frame.size.width) - randomSquareSize
-    let maxY = Int(self.view.frame.size.height - 44) - randomSquareSize
+    let maxY = Int(self.view.frame.size.height - CGFloat(self.topBarHeight)) - randomSquareSize
     
     let randomX = Int.random(1...maxX)
     let randomY = Int.random(1...maxY)
@@ -80,7 +83,7 @@ class GameBoardViewController: UIViewController {
   }
   
   func handleSwipe(swipe: UISwipeGestureRecognizer) {
-    let direction:DirectionsType = swipe.direction.translateToDirection()
+    let direction: DirectionsType = swipe.direction.translateToDirection()
     let result = DirectionsManager.sharedInstance.validateDirection(direction)
     self.scoreManager?.calculateScore(result)
     self.updateScoreView()
