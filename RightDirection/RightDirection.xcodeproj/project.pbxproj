@@ -64,7 +64,7 @@
 		273E697C1C8395330015C245 /* GameTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTabViewController.swift; sourceTree = "<group>"; };
 		273E697E1C8395640015C245 /* GameTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTabViewController.xib; sourceTree = "<group>"; };
 		273E69811C83A7EF0015C245 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
-		2795DCCE1C8EEF1800F4380F /* DirectionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsManager.swift; sourceTree = "<group>"; };
+		2795DCCE1C8EEF1800F4380F /* DirectionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsManager.swift; path = ../Model/DirectionsManager.swift; sourceTree = "<group>"; };
 		2795DCD01C8EEF4800F4380F /* DirectionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionEntity.swift; sourceTree = "<group>"; };
 		2795DCD21C8F0E5900F4380F /* directionsSeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = directionsSeed.json; sourceTree = "<group>"; };
 		2795DCD41C8F334300F4380F /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -172,7 +172,6 @@
 			children = (
 				2795DCD21C8F0E5900F4380F /* directionsSeed.json */,
 				27AE747C1C8A192800CE9D92 /* DirectionItem.swift */,
-				2795DCCE1C8EEF1800F4380F /* DirectionsManager.swift */,
 				2795DCD01C8EEF4800F4380F /* DirectionEntity.swift */,
 				2795DCD41C8F334300F4380F /* DataSource.swift */,
 				2795DCD61C8F34DB00F4380F /* DirectionsDataSource.swift */,
@@ -199,6 +198,7 @@
 				27EE736A1C885C0200A0FD3F /* RandomInt.swift */,
 				27AE747A1C8A169800CE9D92 /* DirectionsType.swift */,
 				27AE747E1C8C479000CE9D92 /* PinView.swift */,
+				2795DCCE1C8EEF1800F4380F /* DirectionsManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";

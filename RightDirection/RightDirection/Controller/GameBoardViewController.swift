@@ -56,56 +56,6 @@ class GameBoardViewController: UIViewController {
     }
   }
   
-  func setupMockData() -> [[DirectionItem]] {
-    var items = [[DirectionItem]]()
-    
-    let itemEmpty = DirectionItem(type: .Empty)
-    let itemUp = DirectionItem(type: .Up)
-    let itemDown = DirectionItem(type: .Down)
-    
-    var row = [DirectionItem]()
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemUp)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    items.append(row)
-    
-    row = [DirectionItem]()
-    row.append(itemEmpty)
-    row.append(itemUp)
-    row.append(itemEmpty)
-    row.append(itemUp)
-    row.append(itemEmpty)
-    items.append(row)
-    
-    row = [DirectionItem]()
-    row.append(itemUp)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemUp)
-    items.append(row)
-
-    row = [DirectionItem]()
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    items.append(row)
-    
-    row = [DirectionItem]()
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    items.append(row)
-    
-    return items
-  }
-  
   func addSwipeRecognizerForDirection(direction: UISwipeGestureRecognizerDirection) {
     let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
     swipeGesture.direction = direction //it's also possible to pass whole array here, but apparently in that case only left and right swipe works (Xcode 7.2)
