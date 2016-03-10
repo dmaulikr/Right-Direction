@@ -36,14 +36,18 @@ class GameTabViewController: UIViewController {
     
     let vc = GameBoardViewController()
     self.addChildViewController(vc)
+    
+    // Closure for points update, called inside GameBoardViewController when 
+    // user swipes in correct direction.
+    vc.updatePoints = { pointsValue in
+      if let points = self.pointsLabel {
+        points.text = NSLocalizedString("Points: ", comment: "Points: ") + String(pointsValue)
+      }
+    }
+    
     if let gameTab = self.gameTabVC {
       gameTab.addSubview(vc.view)
     }
-  }
-
-  override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
   
   override func prefersStatusBarHidden() -> Bool {
@@ -57,15 +61,4 @@ class GameTabViewController: UIViewController {
   @IBAction func closeAction(sender: AnyObject) {
     self.dismissViewControllerAnimated(true, completion: nil)
   }
-  
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
-
 }
