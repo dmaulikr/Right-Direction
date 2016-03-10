@@ -16,29 +16,30 @@ class GameBoardViewController: UIViewController {
   @IBOutlet weak var directionsViewAxisY: NSLayoutConstraint!
   
   @IBOutlet weak var directionsView: DirectionsView!
+  var scoreManager: ScoreManager?
+  var updatePoints: ((points: Int) -> ())?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    print("didload width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
 
-    self.setupView()
-  }
-    
-  override func viewWillAppear(animated: Bool) {
-    print("willappear width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
+    self.setup()
   }
   
   override func viewDidAppear(animated: Bool) {
-    print("didappear width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
+    super.viewDidAppear(animated)
+    self.setupDirections()
+    self.setRandomPosition()
+  }
+    
+  func setup() {
+    self.scoreManager = ScoreManager()
+    self.setupView()
   }
   
   func setupView() {
     for direction in [.Right, .Left, .Up, .Down] as [UISwipeGestureRecognizerDirection] {
       self.addSwipeRecognizerForDirection(direction)
     }
-    
-    self.setupDirections()
   }
   
   func setupDirections() {
@@ -56,14 +57,7 @@ class GameBoardViewController: UIViewController {
     }
   }
   
-  func addSwipeRecognizerForDirection(direction: UISwipeGestureRecognizerDirection) {
-    let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
-    swipeGesture.direction = direction //it's also possible to pass whole array here, but apparently in that case only left and right swipe works (Xcode 7.2)
-    self.view.addGestureRecognizer(swipeGesture)
-  }
-  
-  func handleSwipe(swipe: UISwipeGestureRecognizer) {
-    print("swipe: \(swipe.direction)")
+  func setRandomPosition() {
     let randomSquareSize = Int.random(200...250)
     
     let maxX = Int(self.view.frame.size.width) - randomSquareSize
@@ -77,27 +71,30 @@ class GameBoardViewController: UIViewController {
     
     self.directionsViewWidth.constant = CGFloat(randomSquareSize)
     self.directionsViewHeight.constant = CGFloat(randomSquareSize)
+  }
+  
+  func addSwipeRecognizerForDirection(direction: UISwipeGestureRecognizerDirection) {
+    let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+    swipeGesture.direction = direction //it's also possible to pass whole array here, but apparently in that case only left and right swipe works (Xcode 7.2)
+    self.view.addGestureRecognizer(swipeGesture)
+  }
+  
+  func handleSwipe(swipe: UISwipeGestureRecognizer) {
+    let direction:DirectionsType = swipe.direction.translateToDirection()
+    let result = DirectionsManager.sharedInstance.validateDirection(direction)
+    self.scoreManager?.calculateScore(result)
+    self.updateScoreView()
     
-//    self.view.layoutIfNeeded()
-//    self.view.layoutSubviews()
-    
-        print("width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
     self.setupDirections()
+    self.setRandomPosition()
   }
 
-  override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+  func updateScoreView() {
+    if let updatePoints = self.updatePoints {
+      if let score = self.scoreManager {
+        updatePoints(points: score.userScore)
+      }
+    }
   }
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
 
 }

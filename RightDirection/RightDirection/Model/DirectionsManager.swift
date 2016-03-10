@@ -13,6 +13,7 @@ class DirectionsManager {
   var directionsModel = [DirectionEntity]?()
   private init() {}
   var datasource: DirectionsDataSource?
+  var currentItem: DirectionEntity?
   
   func setup() {
     self.datasource = DirectionsDataSource()
@@ -26,9 +27,23 @@ class DirectionsManager {
     let randomElement = Int.random(0...max)
     
     if let item = self.directionsModel {
-      items = item[randomElement].items
+      let selectedItem = item[randomElement]
+      self.currentItem = selectedItem
+      items = selectedItem.items
     }
     
     return items
+  }
+  
+  func validateDirection(direction: DirectionsType) -> Bool {
+    guard let item = self.currentItem else {
+      return false
+    }
+    
+    if item.correctDirection == direction {
+      return true
+    }
+    
+    return false
   }
 }
