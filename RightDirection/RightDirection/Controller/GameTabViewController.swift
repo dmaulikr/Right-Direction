@@ -36,6 +36,8 @@ class GameTabViewController: UIViewController {
     
     let vc = GameBoardViewController()
     self.addChildViewController(vc)
+
+
     
     // Closure for points update, called inside GameBoardViewController when 
     // user swipes in correct direction.
@@ -47,6 +49,11 @@ class GameTabViewController: UIViewController {
     
     if let gameTab = self.gameTabVC {
       gameTab.addSubview(vc.view)
+      vc.view.translatesAutoresizingMaskIntoConstraints = false
+      vc.view.pin(gameTab, direction: .Left)
+      vc.view.pin(gameTab, direction: .Right)
+      vc.view.pin(gameTab, direction: .Up)
+      vc.view.pin(gameTab, direction: .Down)
     }
   }
   
