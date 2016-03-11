@@ -12,6 +12,9 @@ class GameBoardViewController: UIViewController {
   let topBarHeight = 44 //size of top navigation bar, navbar here it's just normal UIView
   let minDirectionViewSquare = 200 //minimum size of view with directions
   let maxDirectionViewSquare = 250 //maximum size of view with directions
+  let badgeViewWidth = 141
+  let badgeViewHeight = 160
+  let badgeRoundedCorners = 30
   
   @IBOutlet weak var directionsViewHeight: NSLayoutConstraint!
   @IBOutlet weak var directionsViewWidth: NSLayoutConstraint!
@@ -21,6 +24,7 @@ class GameBoardViewController: UIViewController {
   @IBOutlet weak var directionsView: DirectionsView!
   var scoreManager: ScoreManager?
   var updatePoints: ((points: Int) -> ())?
+  var badgeView: BadgeView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,6 +46,17 @@ class GameBoardViewController: UIViewController {
   func setupView() {
     for direction in [.Right, .Left, .Up, .Down] as [UISwipeGestureRecognizerDirection] {
       self.addSwipeRecognizerForDirection(direction)
+    }
+    
+    if let badge = NSBundle.mainBundle().loadNibNamed("BadgeView", owner: self, options: nil)[0] as? BadgeView {
+      self.view.addSubview(badge)
+      self.badgeView = badge
+      badge.translatesAutoresizingMaskIntoConstraints = false
+      badge.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
+      badge.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
+      badge.widthAnchor.constraintEqualToConstant(CGFloat(badgeViewWidth)).active = true
+      badge.heightAnchor.constraintEqualToConstant(CGFloat(badgeViewHeight)).active = true
+      badge.layer.cornerRadius = CGFloat(badgeRoundedCorners)
     }
   }
   
@@ -86,6 +101,7 @@ class GameBoardViewController: UIViewController {
     let direction: DirectionsType = swipe.direction.translateToDirection()
     let result = DirectionsManager.sharedInstance.validateDirection(direction)
     self.scoreManager?.calculateScore(result)
+    self.badgeView?.setupBadgeWithResult(result)
     self.updateScoreView()
     
     self.setupDirections()
