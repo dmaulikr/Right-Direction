@@ -9,28 +9,38 @@
 import UIKit
 
 class GameBoardViewController: UIViewController {
-
+  let topBarHeight = 44 //size of top navigation bar, navbar here it's just normal UIView
+  let minDirectionViewSquare = 200 //minimum size of view with directions
+  let maxDirectionViewSquare = 250 //maximum size of view with directions
+  let badgeViewWidth = 141
+  let badgeViewHeight = 160
+  let badgeRoundedCorners = 30
+  
   @IBOutlet weak var directionsViewHeight: NSLayoutConstraint!
   @IBOutlet weak var directionsViewWidth: NSLayoutConstraint!
   @IBOutlet weak var directionsViewAxisX: NSLayoutConstraint!
   @IBOutlet weak var directionsViewAxisY: NSLayoutConstraint!
   
   @IBOutlet weak var directionsView: DirectionsView!
+  var scoreManager: ScoreManager?
+  var updatePoints: ((points: Int) -> ())?
+  var badgeView: BadgeView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    print("didload width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
 
-    self.setupView()
-  }
-    
-  override func viewWillAppear(animated: Bool) {
-    print("willappear width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
+    self.setup()
   }
   
   override func viewDidAppear(animated: Bool) {
-    print("didappear width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
+    super.viewDidAppear(animated)
+    self.setupDirections()
+    self.setRandomPosition()
+  }
+    
+  func setup() {
+    self.scoreManager = ScoreManager()
+    self.setupView()
   }
   
   func setupView() {
@@ -38,80 +48,38 @@ class GameBoardViewController: UIViewController {
       self.addSwipeRecognizerForDirection(direction)
     }
     
-    if let directions = NSBundle.mainBundle().loadNibNamed("DirectionsView", owner: self, options: nil)[0] as? DirectionsView {
-      directions.datasource = self.setupMockData()
-      directions.setup()
-      self.directionsView.addSubview(directions)
-      directions.translatesAutoresizingMaskIntoConstraints = false
-      directions.leadingAnchor.constraintEqualToAnchor(self.directionsView.leadingAnchor).active = true
-      directions.trailingAnchor.constraintEqualToAnchor(self.directionsView.trailingAnchor).active = true
-      directions.topAnchor.constraintEqualToAnchor(self.directionsView.topAnchor).active = true
-      directions.bottomAnchor.constraintEqualToAnchor(self.directionsView.bottomAnchor).active = true
+    if let badge = NSBundle.mainBundle().loadNibNamed("BadgeView", owner: self, options: nil)[0] as? BadgeView {
+      self.view.addSubview(badge)
+      self.badgeView = badge
+      badge.translatesAutoresizingMaskIntoConstraints = false
+      badge.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
+      badge.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
+      badge.widthAnchor.constraintEqualToConstant(CGFloat(badgeViewWidth)).active = true
+      badge.heightAnchor.constraintEqualToConstant(CGFloat(badgeViewHeight)).active = true
+      badge.layer.cornerRadius = CGFloat(badgeRoundedCorners)
     }
   }
   
-  func setupMockData() -> [[DirectionItem]] {
-    var items = [[DirectionItem]]()
+  func setupDirections() {
+    self.directionsView.cleanUp()
     
-    let itemEmpty = DirectionItem(type: .Empty)
-    let itemUp = DirectionItem(type: .Up)
-    let itemDown = DirectionItem(type: .Down)
-    
-    var row = [DirectionItem]()
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemUp)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    items.append(row)
-    
-    row = [DirectionItem]()
-    row.append(itemEmpty)
-    row.append(itemUp)
-    row.append(itemEmpty)
-    row.append(itemUp)
-    row.append(itemEmpty)
-    items.append(row)
-    
-    row = [DirectionItem]()
-    row.append(itemUp)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemUp)
-    items.append(row)
-
-    row = [DirectionItem]()
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    items.append(row)
-    
-    row = [DirectionItem]()
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    row.append(itemEmpty)
-    items.append(row)
-    
-    return items
+    if let directions = NSBundle.mainBundle().loadNibNamed("DirectionsView", owner: self, options: nil)[0] as? DirectionsView {
+      directions.datasource = DirectionsManager.sharedInstance.getItem()
+      directions.setup()
+      self.directionsView.addSubview(directions)
+      directions.translatesAutoresizingMaskIntoConstraints = false
+      directions.pin(self.directionsView, direction: .Left)
+      directions.pin(self.directionsView, direction: .Right)
+      directions.pin(self.directionsView, direction: .Up)
+      directions.pin(self.directionsView, direction: .Down)
+    }
   }
   
-  func addSwipeRecognizerForDirection(direction: UISwipeGestureRecognizerDirection) {
-    let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
-    swipeGesture.direction = direction //it's also possible to pass whole array here, but apparently in that case only left and right swipe works (Xcode 7.2)
-    self.view.addGestureRecognizer(swipeGesture)
-  }
-  
-  func handleSwipe(swipe: UISwipeGestureRecognizer) {
-    print("swipe: \(swipe.direction)")
-    let randomSquareSize = Int.random(200...250)
+  func setRandomPosition() {
+    let randomSquareSize = Int.random(self.minDirectionViewSquare...self.maxDirectionViewSquare)
     
     let maxX = Int(self.view.frame.size.width) - randomSquareSize
-    let maxY = Int(self.view.frame.size.height - 44) - randomSquareSize
+    let maxY = Int(self.view.frame.size.height - CGFloat(self.topBarHeight)) - randomSquareSize
     
     let randomX = Int.random(1...maxX)
     let randomY = Int.random(1...maxY)
@@ -121,26 +89,31 @@ class GameBoardViewController: UIViewController {
     
     self.directionsViewWidth.constant = CGFloat(randomSquareSize)
     self.directionsViewHeight.constant = CGFloat(randomSquareSize)
+  }
+  
+  func addSwipeRecognizerForDirection(direction: UISwipeGestureRecognizerDirection) {
+    let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+    swipeGesture.direction = direction //it's also possible to pass whole array here, but apparently in that case only left and right swipe works (Xcode 7.2)
+    self.view.addGestureRecognizer(swipeGesture)
+  }
+  
+  func handleSwipe(swipe: UISwipeGestureRecognizer) {
+    let direction: DirectionsType = swipe.direction.translateToDirection()
+    let result = DirectionsManager.sharedInstance.validateDirection(direction)
+    self.scoreManager?.calculateScore(result)
+    self.badgeView?.setupBadgeWithResult(result)
+    self.updateScoreView()
     
-//    self.view.layoutIfNeeded()
-//    self.view.layoutSubviews()
-    
-        print("width: \(self.view.frame.size.width) height: \(self.view.frame.size.height)")
+    self.setupDirections()
+    self.setRandomPosition()
   }
 
-  override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+  func updateScoreView() {
+    if let updatePoints = self.updatePoints {
+      if let score = self.scoreManager {
+        updatePoints(points: score.userScore)
+      }
+    }
   }
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
 
 }
