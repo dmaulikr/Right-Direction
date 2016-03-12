@@ -9,7 +9,10 @@
 import UIKit
 
 class BadgeView: UIView {
-
+  let badgeViewWidth = 141
+  let badgeViewHeight = 160
+  let badgeRoundedCorners = 30
+  
   @IBOutlet weak var statusImage: UIImageView!
   
   func showBadgeWithType(type: BadgeType) {

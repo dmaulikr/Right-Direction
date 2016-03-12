@@ -12,9 +12,6 @@ class GameBoardViewController: UIViewController {
   let topBarHeight = 44 //size of top navigation bar, navbar here it's just normal UIView
   let minDirectionViewSquare = 200 //minimum size of view with directions
   let maxDirectionViewSquare = 250 //maximum size of view with directions
-  let badgeViewWidth = 141
-  let badgeViewHeight = 160
-  let badgeRoundedCorners = 30
   
   @IBOutlet weak var directionsViewHeight: NSLayoutConstraint!
   @IBOutlet weak var directionsViewWidth: NSLayoutConstraint!
@@ -54,9 +51,9 @@ class GameBoardViewController: UIViewController {
       badge.translatesAutoresizingMaskIntoConstraints = false
       badge.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
       badge.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
-      badge.widthAnchor.constraintEqualToConstant(CGFloat(badgeViewWidth)).active = true
-      badge.heightAnchor.constraintEqualToConstant(CGFloat(badgeViewHeight)).active = true
-      badge.layer.cornerRadius = CGFloat(badgeRoundedCorners)
+      badge.widthAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewWidth)).active = true
+      badge.heightAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewHeight)).active = true
+      badge.layer.cornerRadius = CGFloat(badge.badgeRoundedCorners)
     }
   }
   
