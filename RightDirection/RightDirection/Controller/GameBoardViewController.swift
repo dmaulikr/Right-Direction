@@ -23,6 +23,10 @@ class GameBoardViewController: UIViewController {
   var updatePoints: ((points: Int) -> ())?
   var badgeView: BadgeView?
   
+  // When false we block all swipe gestures,
+  // game is inactive at the begining and at the end when time pass
+  var isGameActive = false
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -31,8 +35,6 @@ class GameBoardViewController: UIViewController {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    self.setupDirections()
-    self.setRandomPosition()
   }
     
   func setup() {
@@ -54,6 +56,16 @@ class GameBoardViewController: UIViewController {
       badge.widthAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewWidth)).active = true
       badge.heightAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewHeight)).active = true
       badge.layer.cornerRadius = CGFloat(badge.badgeRoundedCorners)
+    }
+    
+    if let messageView = NSBundle.mainBundle().loadNibNamed("MessageView", owner: self, options: nil)[0] as? MessageView {
+      self.view.addSubview(messageView)
+      messageView.translatesAutoresizingMaskIntoConstraints = false
+      messageView.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
+      messageView.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
+      messageView.widthAnchor.constraintEqualToConstant(CGFloat(messageView.messageViewWidth)).active = true
+      messageView.heightAnchor.constraintEqualToConstant(CGFloat(messageView.messageViewHeight)).active = true
+      messageView.layer.cornerRadius = CGFloat(messageView.messageRoundedCorners)
     }
   }
   
@@ -95,6 +107,10 @@ class GameBoardViewController: UIViewController {
   }
   
   func handleSwipe(swipe: UISwipeGestureRecognizer) {
+    if !self.isGameActive {
+      return
+    }
+    
     let direction: DirectionsType = swipe.direction.translateToDirection()
     let result = DirectionsManager.sharedInstance.validateDirection(direction)
     self.scoreManager?.calculateScore(result)

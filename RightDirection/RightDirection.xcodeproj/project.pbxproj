@@ -22,6 +22,8 @@
 		2773EF081C92480F00C9491B /* BadgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773EF071C92480F00C9491B /* BadgeView.xib */; };
 		2773EF0A1C92494A00C9491B /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2773EF091C92494A00C9491B /* BadgeView.swift */; };
 		2773EF0C1C92B73300C9491B /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2773EF0B1C92B73300C9491B /* BadgeType.swift */; };
+		277AA5C61C947DCA001D4971 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277AA5C51C947DCA001D4971 /* MessageView.swift */; };
+		277AA5C81C947DD7001D4971 /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 277AA5C71C947DD7001D4971 /* MessageView.xib */; };
 		277C3A2E1C91B1AD00E3BE93 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C3A2D1C91B1AD00E3BE93 /* ScoreManager.swift */; };
 		277C3A301C91B98500E3BE93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C3A2F1C91B98500E3BE93 /* Constants.swift */; };
 		277C3A321C91C9E700E3BE93 /* SwipeGestureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C3A311C91C9E700E3BE93 /* SwipeGestureExtension.swift */; };
@@ -73,6 +75,8 @@
 		2773EF071C92480F00C9491B /* BadgeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeView.xib; sourceTree = "<group>"; };
 		2773EF091C92494A00C9491B /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		2773EF0B1C92B73300C9491B /* BadgeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
+		277AA5C51C947DCA001D4971 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		277AA5C71C947DD7001D4971 /* MessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
 		277C3A2D1C91B1AD00E3BE93 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		277C3A2F1C91B98500E3BE93 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		277C3A311C91C9E700E3BE93 /* SwipeGestureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeGestureExtension.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				27AE74781C89AA8600CE9D92 /* DirectionItemView.xib */,
 				2773EF091C92494A00C9491B /* BadgeView.swift */,
 				2773EF071C92480F00C9491B /* BadgeView.xib */,
+				277AA5C51C947DCA001D4971 /* MessageView.swift */,
+				277AA5C71C947DD7001D4971 /* MessageView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 			files = (
 				2795DCD31C8F0E5900F4380F /* directionsSeed.json in Resources */,
 				27AE74751C89A7CF00CE9D92 /* DirectionsView.xib in Resources */,
+				277AA5C81C947DD7001D4971 /* MessageView.xib in Resources */,
 				27215C3C1C81E50C005D66BE /* LaunchScreen.storyboard in Resources */,
 				27EE73691C88197D00A0FD3F /* GameBoardViewController.xib in Resources */,
 				2773EF081C92480F00C9491B /* BadgeView.xib in Resources */,
@@ -459,6 +466,7 @@
 				27AE747D1C8A192800CE9D92 /* DirectionItem.swift in Sources */,
 				27215C571C81EB1B005D66BE /* GameDashboardViewController.swift in Sources */,
 				27AE74731C89A7B900CE9D92 /* DirectionsView.swift in Sources */,
+				277AA5C61C947DCA001D4971 /* MessageView.swift in Sources */,
 				27EE73681C88197D00A0FD3F /* GameBoardViewController.swift in Sources */,
 				27AE747B1C8A169800CE9D92 /* DirectionsType.swift in Sources */,
 				27BB4F201C838E88000D1B31 /* Colors.swift in Sources */,
