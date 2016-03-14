@@ -10,6 +10,7 @@
                 <outlet property="controlsView" destination="aP2-Y0-lPg" id="yu0-Gy-ZgX"/>
                 <outlet property="gameTabVC" destination="FNd-dq-TAH" id="NNz-ct-0nt"/>
                 <outlet property="pointsLabel" destination="8hp-hz-WFQ" id="CeZ-Bo-3vg"/>
+                <outlet property="timeLabel" destination="Y3q-jO-Mfn" id="SUq-4d-rhj"/>
                 <outlet property="view" destination="iN0-l3-epB" id="EKk-zW-tHj"/>
             </connections>
         </placeholder>
@@ -31,10 +32,21 @@
                                 <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="hJz-Ta-idE"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hp-hz-WFQ">
-                            <rect key="frame" x="8" y="12" width="511" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hp-hz-WFQ">
+                            <rect key="frame" x="8" y="12" width="100" height="21"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="100" id="EHX-Jo-8LE"/>
                                 <constraint firstAttribute="height" constant="21" id="PnW-Ep-T15"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 0:40" textAlignment="center" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3q-jO-Mfn">
+                            <rect key="frame" x="250" y="12" width="100" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="UsT-fw-Deq"/>
+                                <constraint firstAttribute="width" constant="100" id="wHW-c7-a8u"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,6 +55,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="Y3q-jO-Mfn" firstAttribute="centerY" secondItem="aP2-Y0-lPg" secondAttribute="centerY" id="BL8-Bf-z28"/>
+                        <constraint firstItem="Y3q-jO-Mfn" firstAttribute="centerX" secondItem="aP2-Y0-lPg" secondAttribute="centerX" id="XNC-WE-9M4"/>
                         <constraint firstAttribute="trailing" secondItem="BPW-nZ-ys3" secondAttribute="trailing" constant="8" id="dSG-OY-Cly"/>
                         <constraint firstItem="BPW-nZ-ys3" firstAttribute="leading" secondItem="8hp-hz-WFQ" secondAttribute="trailing" constant="8" id="j82-uX-4zo"/>
                         <constraint firstItem="8hp-hz-WFQ" firstAttribute="leading" secondItem="aP2-Y0-lPg" secondAttribute="leading" constant="8" id="lP3-d9-t3p"/>
@@ -50,6 +64,11 @@
                         <constraint firstItem="8hp-hz-WFQ" firstAttribute="top" secondItem="aP2-Y0-lPg" secondAttribute="top" constant="12" id="ujj-Hb-esf"/>
                         <constraint firstAttribute="height" constant="44" id="weO-Ie-OeQ"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="j82-uX-4zo"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNd-dq-TAH">
                     <rect key="frame" x="0.0" y="44" width="600" height="556"/>
@@ -65,7 +84,7 @@
                 <constraint firstItem="FNd-dq-TAH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jT8-Rk-jQ0"/>
                 <constraint firstItem="FNd-dq-TAH" firstAttribute="top" secondItem="aP2-Y0-lPg" secondAttribute="bottom" id="pg7-OJ-DKe"/>
             </constraints>
-            <point key="canvasLocation" x="-139" y="339"/>
+            <point key="canvasLocation" x="-333" y="244"/>
         </view>
     </objects>
 </document>
