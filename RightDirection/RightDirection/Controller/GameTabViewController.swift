@@ -15,6 +15,7 @@ class GameTabViewController: UIViewController {
   @IBOutlet weak var controlsView: UIView!
   @IBOutlet weak var pointsLabel: UILabel!
   @IBOutlet weak var gameTabVC: UIView!
+  @IBOutlet weak var timeLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,6 +30,10 @@ class GameTabViewController: UIViewController {
     if let points = self.pointsLabel {
       points.textColor = UIColor(hexString: kMainTextColor)
       points.text = NSLocalizedString("Points: ", comment: "Points: ") + "0"
+    }
+    if let time = self.timeLabel {
+      time.textColor = UIColor(hexString: kMainTextColor)
+      time.text = NSLocalizedString("Time: ", comment: "Time: ") + "01:00"
     }
     if let close = self.closeButton {
       close.tintColor = UIColor(hexString: kMainTextColor)
