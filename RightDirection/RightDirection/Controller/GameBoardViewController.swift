@@ -35,8 +35,15 @@ class GameBoardViewController: UIViewController {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+    self.prepareMessageView()
   }
-    
+  
+  func startGame() {
+    self.isGameActive = true
+    self.setupDirections()
+    self.setRandomPosition()
+  }
+  
   func setup() {
     self.scoreManager = ScoreManager()
     self.setupView()
@@ -57,15 +64,22 @@ class GameBoardViewController: UIViewController {
       badge.heightAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewHeight)).active = true
       badge.layer.cornerRadius = CGFloat(badge.badgeRoundedCorners)
     }
-    
-    if let messageView = NSBundle.mainBundle().loadNibNamed("MessageView", owner: self, options: nil)[0] as? MessageView {
-      self.view.addSubview(messageView)
-      messageView.translatesAutoresizingMaskIntoConstraints = false
-      messageView.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
-      messageView.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
-      messageView.widthAnchor.constraintEqualToConstant(CGFloat(messageView.messageViewWidth)).active = true
-      messageView.heightAnchor.constraintEqualToConstant(CGFloat(messageView.messageViewHeight)).active = true
-      messageView.layer.cornerRadius = CGFloat(messageView.messageRoundedCorners)
+  }
+  
+  func prepareMessageView() {
+    if let mView = NSBundle.mainBundle().loadNibNamed("MessageView", owner: self, options: nil)[0] as? MessageView {
+      self.view.addSubview(mView)
+      mView.showMessages([NSLocalizedString("Prepare...", comment: "Prepare..."), NSLocalizedString("3", comment: "3"), NSLocalizedString("2", comment: "2"), NSLocalizedString("1", comment: "1"), NSLocalizedString("Go!", comment: "Go!")])
+      mView.translatesAutoresizingMaskIntoConstraints = false
+      mView.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
+      mView.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
+      mView.widthAnchor.constraintEqualToConstant(CGFloat(mView.messageViewWidth)).active = true
+      mView.heightAnchor.constraintEqualToConstant(CGFloat(mView.messageViewHeight)).active = true
+      mView.layer.cornerRadius = CGFloat(mView.messageRoundedCorners)
+      mView.completion = {
+        mView.removeFromSuperview()
+        self.startGame()
+      }
     }
   }
   
