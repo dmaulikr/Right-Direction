@@ -16,9 +16,11 @@
 		27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C541C81EB0A005D66BE /* RootViewController.swift */; };
 		27215C571C81EB1B005D66BE /* GameDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */; };
 		27215C591C81EB4A005D66BE /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */; };
+		2722873D1C96A62F003694EE /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2722873C1C96A62F003694EE /* TimerManager.swift */; };
 		273E697D1C8395330015C245 /* GameTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E697C1C8395330015C245 /* GameTabViewController.swift */; };
 		273E697F1C8395640015C245 /* GameTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273E697E1C8395640015C245 /* GameTabViewController.xib */; };
 		273E69821C83A7EF0015C245 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E69811C83A7EF0015C245 /* StatusBar.swift */; };
+		275ACFEC1C980BD900B544C2 /* IntToTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275ACFEB1C980BD900B544C2 /* IntToTime.swift */; };
 		2773EF081C92480F00C9491B /* BadgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773EF071C92480F00C9491B /* BadgeView.xib */; };
 		2773EF0A1C92494A00C9491B /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2773EF091C92494A00C9491B /* BadgeView.swift */; };
 		2773EF0C1C92B73300C9491B /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2773EF0B1C92B73300C9491B /* BadgeType.swift */; };
@@ -69,9 +71,11 @@
 		27215C541C81EB0A005D66BE /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDashboardViewController.swift; sourceTree = "<group>"; };
 		27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
+		2722873C1C96A62F003694EE /* TimerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		273E697C1C8395330015C245 /* GameTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTabViewController.swift; sourceTree = "<group>"; };
 		273E697E1C8395640015C245 /* GameTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTabViewController.xib; sourceTree = "<group>"; };
 		273E69811C83A7EF0015C245 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
+		275ACFEB1C980BD900B544C2 /* IntToTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntToTime.swift; sourceTree = "<group>"; };
 		2773EF071C92480F00C9491B /* BadgeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeView.xib; sourceTree = "<group>"; };
 		2773EF091C92494A00C9491B /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		2773EF0B1C92B73300C9491B /* BadgeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				277C3A2F1C91B98500E3BE93 /* Constants.swift */,
 				277C3A311C91C9E700E3BE93 /* SwipeGestureExtension.swift */,
 				2773EF0B1C92B73300C9491B /* BadgeType.swift */,
+				2722873C1C96A62F003694EE /* TimerManager.swift */,
+				275ACFEB1C980BD900B544C2 /* IntToTime.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 				27EE73681C88197D00A0FD3F /* GameBoardViewController.swift in Sources */,
 				27AE747B1C8A169800CE9D92 /* DirectionsType.swift in Sources */,
 				27BB4F201C838E88000D1B31 /* Colors.swift in Sources */,
+				2722873D1C96A62F003694EE /* TimerManager.swift in Sources */,
 				27215C301C81E50C005D66BE /* AppDelegate.swift in Sources */,
 				27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */,
 				273E697D1C8395330015C245 /* GameTabViewController.swift in Sources */,
@@ -478,6 +485,7 @@
 				2795DCCF1C8EEF1800F4380F /* DirectionsManager.swift in Sources */,
 				27EE736B1C885C0200A0FD3F /* RandomInt.swift in Sources */,
 				27215C591C81EB4A005D66BE /* ScoreBoardViewController.swift in Sources */,
+				275ACFEC1C980BD900B544C2 /* IntToTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,14 +41,19 @@ class GameTabViewController: UIViewController {
     
     let vc = GameBoardViewController()
     self.addChildViewController(vc)
-
-
     
     // Closure for points update, called inside GameBoardViewController when 
     // user swipes in correct direction.
     vc.updatePoints = { pointsValue in
       if let points = self.pointsLabel {
         points.text = NSLocalizedString("Points: ", comment: "Points: ") + String(pointsValue)
+      }
+    }
+    
+    // Closure for time update, called inside GameBoardViewController on every second, and after time ends.
+    vc.updateTime = { timeValue in
+      if let time = self.timeLabel {
+        time.text = NSLocalizedString("Time: ", comment: "Time: ") + timeValue.showAsTime()
       }
     }
     

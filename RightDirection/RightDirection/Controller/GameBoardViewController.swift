@@ -12,6 +12,7 @@ class GameBoardViewController: UIViewController {
   let topBarHeight = 44 //size of top navigation bar, navbar here it's just normal UIView
   let minDirectionViewSquare = 200 //minimum size of view with directions
   let maxDirectionViewSquare = 250 //maximum size of view with directions
+  let playTime = 60
   
   @IBOutlet weak var directionsViewHeight: NSLayoutConstraint!
   @IBOutlet weak var directionsViewWidth: NSLayoutConstraint!
@@ -20,7 +21,9 @@ class GameBoardViewController: UIViewController {
   
   @IBOutlet weak var directionsView: DirectionsView!
   var scoreManager: ScoreManager?
+  var timeManager: TimerManager?
   var updatePoints: ((points: Int) -> ())?
+  var updateTime: ((time: Int) -> ())?
   var badgeView: BadgeView?
   
   // When false we block all swipe gestures,
@@ -40,13 +43,34 @@ class GameBoardViewController: UIViewController {
   
   func startGame() {
     self.isGameActive = true
+    self.timeManager?.startCountdown(self.playTime)
     self.setupDirections()
     self.setRandomPosition()
+  }
+  
+  func finishGame() {
+    self.isGameActive = false
+    self.directionsView.cleanUp()
+    
   }
   
   func setup() {
     self.scoreManager = ScoreManager()
     self.setupView()
+    
+    self.timeManager = TimerManager()
+    if let update = self.updateTime, time = self.timeManager {
+      // This closure is called every second the timer is running, we use it
+      // to run another closure which updates label in GameTabVC
+      time.tick = { timeValue in
+        update(time: timeValue)
+      }
+      
+      // This closure is called when timer finish countdown
+      time.completeCountdown = {
+        self.finishGame()
+      }
+    }
   }
   
   func setupView() {
@@ -142,5 +166,4 @@ class GameBoardViewController: UIViewController {
       }
     }
   }
-
 }
