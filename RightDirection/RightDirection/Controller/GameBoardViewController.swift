@@ -84,12 +84,7 @@ class GameBoardViewController: UIViewController {
     if let badge = NSBundle.mainBundle().loadNibNamed("BadgeView", owner: self, options: nil)[0] as? BadgeView {
       self.view.addSubview(badge)
       self.badgeView = badge
-      badge.translatesAutoresizingMaskIntoConstraints = false
-      badge.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
-      badge.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
-      badge.widthAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewWidth)).active = true
-      badge.heightAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewHeight)).active = true
-      badge.layer.cornerRadius = CGFloat(badge.badgeRoundedCorners)
+      badge.setupAsModal(self.view, width: badge.badgeViewWidth, height: badge.badgeViewHeight, corners: badge.badgeRoundedCorners)
     }
   }
   
@@ -100,11 +95,7 @@ class GameBoardViewController: UIViewController {
       directions.datasource = DirectionsManager.sharedInstance.getItem()
       directions.setup()
       self.directionsView.addSubview(directions)
-      directions.translatesAutoresizingMaskIntoConstraints = false
-      directions.pin(self.directionsView, direction: .Left)
-      directions.pin(self.directionsView, direction: .Right)
-      directions.pin(self.directionsView, direction: .Up)
-      directions.pin(self.directionsView, direction: .Down)
+      directions.pinToAll(self.directionsView)
     }
   }
   

@@ -25,6 +25,23 @@ extension UIView {
     }
   }
   
+  func pinToAll(view: UIView) {
+    self.translatesAutoresizingMaskIntoConstraints = false
+    self.pin(view, direction: .Left)
+    self.pin(view, direction: .Right)
+    self.pin(view, direction: .Up)
+    self.pin(view, direction: .Down)
+  }
+  
+  func setupAsModal(view: UIView, width: Int, height: Int, corners: Int) {
+    self.translatesAutoresizingMaskIntoConstraints = false
+    self.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+    self.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor).active = true
+    self.widthAnchor.constraintEqualToConstant(CGFloat(width)).active = true
+    self.heightAnchor.constraintEqualToConstant(CGFloat(height)).active = true
+    self.layer.cornerRadius = CGFloat(corners)
+  }
+  
   func pinWithRightSideView(view: UIView) {
     self.trailingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
   }
