@@ -10,8 +10,8 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTd-4O-jcp">
-                    <rect key="frame" x="8" y="27" width="184" height="45"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTd-4O-jcp">
+                    <rect key="frame" x="8" y="15" width="184" height="70"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -19,15 +19,15 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="BTd-4O-jcp" secondAttribute="trailing" constant="8" id="261-3U-irC"/>
-                <constraint firstItem="BTd-4O-jcp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="LYT-PT-JFY"/>
-                <constraint firstAttribute="bottom" secondItem="BTd-4O-jcp" secondAttribute="bottom" constant="28" id="SBi-I4-ayf"/>
+                <constraint firstItem="BTd-4O-jcp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="LYT-PT-JFY"/>
+                <constraint firstAttribute="bottom" secondItem="BTd-4O-jcp" secondAttribute="bottom" constant="15" id="SBi-I4-ayf"/>
                 <constraint firstItem="BTd-4O-jcp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="exd-Z5-JbK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="messageLabel" destination="BTd-4O-jcp" id="bh7-6b-nui"/>
             </connections>
-            <point key="canvasLocation" x="361" y="247"/>
+            <point key="canvasLocation" x="-35" y="243"/>
         </view>
     </objects>
 </document>

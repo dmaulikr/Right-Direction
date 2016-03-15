@@ -12,7 +12,7 @@ class GameBoardViewController: UIViewController {
   let topBarHeight = 44 //size of top navigation bar, navbar here it's just normal UIView
   let minDirectionViewSquare = 200 //minimum size of view with directions
   let maxDirectionViewSquare = 250 //maximum size of view with directions
-  let playTime = 60
+  let playTime = 10
   
   @IBOutlet weak var directionsViewHeight: NSLayoutConstraint!
   @IBOutlet weak var directionsViewWidth: NSLayoutConstraint!
@@ -38,7 +38,7 @@ class GameBoardViewController: UIViewController {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    self.prepareMessageView()
+    self.showHelloMessages([NSLocalizedString("Prepare...", comment: "Prepare..."), NSLocalizedString("3", comment: "3"), NSLocalizedString("2", comment: "2"), NSLocalizedString("1", comment: "1"), NSLocalizedString("Go!", comment: "Go!")])
   }
   
   func startGame() {
@@ -51,7 +51,10 @@ class GameBoardViewController: UIViewController {
   func finishGame() {
     self.isGameActive = false
     self.directionsView.cleanUp()
-    
+    if let scoreManager = self.scoreManager {
+      let finalMessage = NSLocalizedString("You have: ", comment: "You have: ") + String(scoreManager.userScore) + NSLocalizedString(" points!", comment: " points!")
+      self.showFinalMessage(finalMessage)
+    }
   }
   
   func setup() {
@@ -87,23 +90,6 @@ class GameBoardViewController: UIViewController {
       badge.widthAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewWidth)).active = true
       badge.heightAnchor.constraintEqualToConstant(CGFloat(badge.badgeViewHeight)).active = true
       badge.layer.cornerRadius = CGFloat(badge.badgeRoundedCorners)
-    }
-  }
-  
-  func prepareMessageView() {
-    if let mView = NSBundle.mainBundle().loadNibNamed("MessageView", owner: self, options: nil)[0] as? MessageView {
-      self.view.addSubview(mView)
-      mView.showMessages([NSLocalizedString("Prepare...", comment: "Prepare..."), NSLocalizedString("3", comment: "3"), NSLocalizedString("2", comment: "2"), NSLocalizedString("1", comment: "1"), NSLocalizedString("Go!", comment: "Go!")])
-      mView.translatesAutoresizingMaskIntoConstraints = false
-      mView.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
-      mView.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
-      mView.widthAnchor.constraintEqualToConstant(CGFloat(mView.messageViewWidth)).active = true
-      mView.heightAnchor.constraintEqualToConstant(CGFloat(mView.messageViewHeight)).active = true
-      mView.layer.cornerRadius = CGFloat(mView.messageRoundedCorners)
-      mView.completion = {
-        mView.removeFromSuperview()
-        self.startGame()
-      }
     }
   }
   
