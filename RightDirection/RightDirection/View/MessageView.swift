@@ -48,4 +48,10 @@ class MessageView: UIView {
       })
     }
   }
+  
+  // Show simple message inside label
+  func showMessage(message: String) {
+    self.messageLabel.text = message
+    self.messageLabel.alpha = 1
+  }
 }
