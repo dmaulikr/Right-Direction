@@ -10,6 +10,7 @@ import Foundation
 
 class ScoreManager {
   var userScore = 0
+  let saveKey = "userScore"
   
   // We calculate score based on result that will come from recognizer.
   // If result is true, that means user has swiped in right direction and 
@@ -22,4 +23,27 @@ class ScoreManager {
       self.userScore -= kPointsNegative
     }
   }
+  
+  // Simple save user score object to user defaults.
+  func saveScoreForUser(name: String) {
+    var scores = self.getScores()
+    let newScore = ScoreItem(name: name, scoreValue: self.userScore)
+    scores.append(newScore)
+    let data = NSKeyedArchiver.archivedDataWithRootObject(scores)
+    NSUserDefaults.standardUserDefaults().setObject(data, forKey: self.saveKey)
+  }
+  
+  func getScores() -> [ScoreItem] {
+    var results = [ScoreItem]()
+    
+    if let items = NSUserDefaults.standardUserDefaults().objectForKey(self.saveKey) as? NSData,
+            data = NSKeyedUnarchiver.unarchiveObjectWithData(items) as? [ScoreItem] {
+      results = data
+    }
+    
+    return results
+  }
+  
+  
+  
 }
