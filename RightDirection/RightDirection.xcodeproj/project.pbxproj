@@ -22,6 +22,7 @@
 		273E69821C83A7EF0015C245 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E69811C83A7EF0015C245 /* StatusBar.swift */; };
 		275ACFEC1C980BD900B544C2 /* IntToTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275ACFEB1C980BD900B544C2 /* IntToTime.swift */; };
 		275ACFEE1C98236D00B544C2 /* GameBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275ACFED1C98236D00B544C2 /* GameBoardExtension.swift */; };
+		275ACFF01C98478E00B544C2 /* ScoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275ACFEF1C98478E00B544C2 /* ScoreItem.swift */; };
 		2773EF081C92480F00C9491B /* BadgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773EF071C92480F00C9491B /* BadgeView.xib */; };
 		2773EF0A1C92494A00C9491B /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2773EF091C92494A00C9491B /* BadgeView.swift */; };
 		2773EF0C1C92B73300C9491B /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2773EF0B1C92B73300C9491B /* BadgeType.swift */; };
@@ -78,6 +79,7 @@
 		273E69811C83A7EF0015C245 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		275ACFEB1C980BD900B544C2 /* IntToTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntToTime.swift; sourceTree = "<group>"; };
 		275ACFED1C98236D00B544C2 /* GameBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardExtension.swift; sourceTree = "<group>"; };
+		275ACFEF1C98478E00B544C2 /* ScoreItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreItem.swift; sourceTree = "<group>"; };
 		2773EF071C92480F00C9491B /* BadgeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeView.xib; sourceTree = "<group>"; };
 		2773EF091C92494A00C9491B /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		2773EF0B1C92B73300C9491B /* BadgeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				2795DCD01C8EEF4800F4380F /* DirectionEntity.swift */,
 				2795DCD41C8F334300F4380F /* DataSource.swift */,
 				2795DCD61C8F34DB00F4380F /* DirectionsDataSource.swift */,
+				275ACFEF1C98478E00B544C2 /* ScoreItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				2795DCD71C8F34DB00F4380F /* DirectionsDataSource.swift in Sources */,
 				2795DCCF1C8EEF1800F4380F /* DirectionsManager.swift in Sources */,
 				27EE736B1C885C0200A0FD3F /* RandomInt.swift in Sources */,
+				275ACFF01C98478E00B544C2 /* ScoreItem.swift in Sources */,
 				27215C591C81EB4A005D66BE /* ScoreBoardViewController.swift in Sources */,
 				275ACFEC1C980BD900B544C2 /* IntToTime.swift in Sources */,
 			);
