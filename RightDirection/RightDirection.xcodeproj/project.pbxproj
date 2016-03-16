@@ -36,6 +36,7 @@
 		2795DCD31C8F0E5900F4380F /* directionsSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 2795DCD21C8F0E5900F4380F /* directionsSeed.json */; };
 		2795DCD51C8F334300F4380F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795DCD41C8F334300F4380F /* DataSource.swift */; };
 		2795DCD71C8F34DB00F4380F /* DirectionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795DCD61C8F34DB00F4380F /* DirectionsDataSource.swift */; };
+		27A29ED01C99F4B000361107 /* UserInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A29ECF1C99F4B000361107 /* UserInputVC.swift */; };
 		27AE74731C89A7B900CE9D92 /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE74721C89A7B900CE9D92 /* DirectionsView.swift */; };
 		27AE74751C89A7CF00CE9D92 /* DirectionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27AE74741C89A7CF00CE9D92 /* DirectionsView.xib */; };
 		27AE74771C89AA7900CE9D92 /* DirectionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE74761C89AA7900CE9D92 /* DirectionItemView.swift */; };
@@ -93,6 +94,7 @@
 		2795DCD21C8F0E5900F4380F /* directionsSeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = directionsSeed.json; sourceTree = "<group>"; };
 		2795DCD41C8F334300F4380F /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		2795DCD61C8F34DB00F4380F /* DirectionsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsDataSource.swift; sourceTree = "<group>"; };
+		27A29ECF1C99F4B000361107 /* UserInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputVC.swift; sourceTree = "<group>"; };
 		27AE74721C89A7B900CE9D92 /* DirectionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
 		27AE74741C89A7CF00CE9D92 /* DirectionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectionsView.xib; sourceTree = "<group>"; };
 		27AE74761C89AA7900CE9D92 /* DirectionItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionItemView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				273E697C1C8395330015C245 /* GameTabViewController.swift */,
 				27EE73661C88197D00A0FD3F /* GameBoardViewController.swift */,
 				275ACFED1C98236D00B544C2 /* GameBoardExtension.swift */,
+				27A29ECF1C99F4B000361107 /* UserInputVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				27EE73681C88197D00A0FD3F /* GameBoardViewController.swift in Sources */,
 				27AE747B1C8A169800CE9D92 /* DirectionsType.swift in Sources */,
 				27BB4F201C838E88000D1B31 /* Colors.swift in Sources */,
+				27A29ED01C99F4B000361107 /* UserInputVC.swift in Sources */,
 				2722873D1C96A62F003694EE /* TimerManager.swift in Sources */,
 				27215C301C81E50C005D66BE /* AppDelegate.swift in Sources */,
 				27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */,
