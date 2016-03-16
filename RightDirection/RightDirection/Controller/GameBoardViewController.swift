@@ -12,7 +12,7 @@ class GameBoardViewController: UIViewController {
   let topBarHeight = 44 //size of top navigation bar, navbar here it's just normal UIView
   let minDirectionViewSquare = 200 //minimum size of view with directions
   let maxDirectionViewSquare = 250 //maximum size of view with directions
-  let playTime = 10
+  let playTime = 60
   
   @IBOutlet weak var directionsViewHeight: NSLayoutConstraint!
   @IBOutlet weak var directionsViewWidth: NSLayoutConstraint!
@@ -54,6 +54,10 @@ class GameBoardViewController: UIViewController {
     if let scoreManager = self.scoreManager {
       let finalMessage = NSLocalizedString("You have: ", comment: "You have: ") + String(scoreManager.userScore) + NSLocalizedString(" points!", comment: " points!")
       self.showFinalMessage(finalMessage)
+    }
+    
+    self.getFromUser(NSLocalizedString("Enter your name", comment: "Enter your name")) { (name) -> () in
+      self.scoreManager?.saveScoreForUser(name)
     }
   }
   
