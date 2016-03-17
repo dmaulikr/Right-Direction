@@ -29,7 +29,7 @@ class BadgeView: UIView {
     self.hidden = false
     
     UIView.animateWithDuration(0.2, delay: 0, options: [.CurveEaseInOut], animations: {
-      self.alpha = 1
+      self.alpha = 0.5
       }, completion: { finished in
         if finished {
           self.hideStatus()
