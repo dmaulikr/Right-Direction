@@ -9,7 +9,10 @@
 import UIKit
 
 class BadgeView: UIView {
-
+  let badgeViewWidth = 141
+  let badgeViewHeight = 160
+  let badgeRoundedCorners = 30
+  
   @IBOutlet weak var statusImage: UIImageView!
   
   func showBadgeWithType(type: BadgeType) {
@@ -26,7 +29,7 @@ class BadgeView: UIView {
     self.hidden = false
     
     UIView.animateWithDuration(0.2, delay: 0, options: [.CurveEaseInOut], animations: {
-      self.alpha = 1
+      self.alpha = 0.5
       }, completion: { finished in
         if finished {
           self.hideStatus()

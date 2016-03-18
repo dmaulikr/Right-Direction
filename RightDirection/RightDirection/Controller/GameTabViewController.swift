@@ -15,6 +15,7 @@ class GameTabViewController: UIViewController {
   @IBOutlet weak var controlsView: UIView!
   @IBOutlet weak var pointsLabel: UILabel!
   @IBOutlet weak var gameTabVC: UIView!
+  @IBOutlet weak var timeLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,20 +31,29 @@ class GameTabViewController: UIViewController {
       points.textColor = UIColor(hexString: kMainTextColor)
       points.text = NSLocalizedString("Points: ", comment: "Points: ") + "0"
     }
+    if let time = self.timeLabel {
+      time.textColor = UIColor(hexString: kMainTextColor)
+      time.text = NSLocalizedString("Time: ", comment: "Time: ") + "01:00"
+    }
     if let close = self.closeButton {
       close.tintColor = UIColor(hexString: kMainTextColor)
     }
     
     let vc = GameBoardViewController()
     self.addChildViewController(vc)
-
-
     
     // Closure for points update, called inside GameBoardViewController when 
     // user swipes in correct direction.
     vc.updatePoints = { pointsValue in
       if let points = self.pointsLabel {
         points.text = NSLocalizedString("Points: ", comment: "Points: ") + String(pointsValue)
+      }
+    }
+    
+    // Closure for time update, called inside GameBoardViewController on every second, and after time ends.
+    vc.updateTime = { timeValue in
+      if let time = self.timeLabel {
+        time.text = NSLocalizedString("Time: ", comment: "Time: ") + timeValue.showAsTime()
       }
     }
     

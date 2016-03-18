@@ -12,9 +12,7 @@ class GameBoardViewController: UIViewController {
   let topBarHeight = 44 //size of top navigation bar, navbar here it's just normal UIView
   let minDirectionViewSquare = 200 //minimum size of view with directions
   let maxDirectionViewSquare = 250 //maximum size of view with directions
-  let badgeViewWidth = 141
-  let badgeViewHeight = 160
-  let badgeRoundedCorners = 30
+  let playTime = 60
   
   @IBOutlet weak var directionsViewHeight: NSLayoutConstraint!
   @IBOutlet weak var directionsViewWidth: NSLayoutConstraint!
@@ -23,8 +21,14 @@ class GameBoardViewController: UIViewController {
   
   @IBOutlet weak var directionsView: DirectionsView!
   var scoreManager: ScoreManager?
+  var timeManager: TimerManager?
   var updatePoints: ((points: Int) -> ())?
+  var updateTime: ((time: Int) -> ())?
   var badgeView: BadgeView?
+  
+  // When false we block all swipe gestures,
+  // game is inactive at the begining and at the end when time pass
+  var isGameActive = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,13 +38,46 @@ class GameBoardViewController: UIViewController {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+    self.showHelloMessages([NSLocalizedString("Prepare...", comment: "Prepare..."), NSLocalizedString("3", comment: "3"), NSLocalizedString("2", comment: "2"), NSLocalizedString("1", comment: "1"), NSLocalizedString("Go!", comment: "Go!")])
+  }
+  
+  func startGame() {
+    self.isGameActive = true
+    self.timeManager?.startCountdown(self.playTime)
     self.setupDirections()
     self.setRandomPosition()
   }
+  
+  func finishGame() {
+    self.isGameActive = false
+    self.directionsView.cleanUp()
+    if let scoreManager = self.scoreManager {
+      let finalMessage = NSLocalizedString("You have: ", comment: "You have: ") + String(scoreManager.userScore) + NSLocalizedString(" points!", comment: " points!")
+      self.showFinalMessage(finalMessage)
+    }
     
+    self.getFromUser(NSLocalizedString("Enter your name", comment: "Enter your name")) { (name) -> () in
+      self.scoreManager?.saveScoreForUser(name)
+    }
+  }
+  
   func setup() {
     self.scoreManager = ScoreManager()
     self.setupView()
+    
+    self.timeManager = TimerManager()
+    if let update = self.updateTime, time = self.timeManager {
+      // This closure is called every second the timer is running, we use it
+      // to run another closure which updates label in GameTabVC
+      time.tick = { timeValue in
+        update(time: timeValue)
+      }
+      
+      // This closure is called when timer finish countdown
+      time.completeCountdown = {
+        self.finishGame()
+      }
+    }
   }
   
   func setupView() {
@@ -51,12 +88,7 @@ class GameBoardViewController: UIViewController {
     if let badge = NSBundle.mainBundle().loadNibNamed("BadgeView", owner: self, options: nil)[0] as? BadgeView {
       self.view.addSubview(badge)
       self.badgeView = badge
-      badge.translatesAutoresizingMaskIntoConstraints = false
-      badge.centerXAnchor.constraintEqualToAnchor(self.view.centerXAnchor).active = true
-      badge.centerYAnchor.constraintEqualToAnchor(self.view.centerYAnchor).active = true
-      badge.widthAnchor.constraintEqualToConstant(CGFloat(badgeViewWidth)).active = true
-      badge.heightAnchor.constraintEqualToConstant(CGFloat(badgeViewHeight)).active = true
-      badge.layer.cornerRadius = CGFloat(badgeRoundedCorners)
+      badge.setupAsModal(self.view, width: badge.badgeViewWidth, height: badge.badgeViewHeight, corners: badge.badgeRoundedCorners)
     }
   }
   
@@ -67,11 +99,7 @@ class GameBoardViewController: UIViewController {
       directions.datasource = DirectionsManager.sharedInstance.getItem()
       directions.setup()
       self.directionsView.addSubview(directions)
-      directions.translatesAutoresizingMaskIntoConstraints = false
-      directions.pin(self.directionsView, direction: .Left)
-      directions.pin(self.directionsView, direction: .Right)
-      directions.pin(self.directionsView, direction: .Up)
-      directions.pin(self.directionsView, direction: .Down)
+      directions.pinToAll(self.directionsView)
     }
   }
   
@@ -98,6 +126,10 @@ class GameBoardViewController: UIViewController {
   }
   
   func handleSwipe(swipe: UISwipeGestureRecognizer) {
+    if !self.isGameActive {
+      return
+    }
+    
     let direction: DirectionsType = swipe.direction.translateToDirection()
     let result = DirectionsManager.sharedInstance.validateDirection(direction)
     self.scoreManager?.calculateScore(result)
@@ -115,5 +147,4 @@ class GameBoardViewController: UIViewController {
       }
     }
   }
-
 }
