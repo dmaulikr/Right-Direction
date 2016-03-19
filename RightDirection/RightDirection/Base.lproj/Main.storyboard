@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E64a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Game Dashboard View Controller-->
@@ -54,11 +54,62 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnf-Ou-Pr9">
+                                <rect key="frame" x="160" y="257" width="280" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="us2-N1-53N"/>
+                                    <constraint firstAttribute="height" constant="85" id="uxK-Sc-Ck2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kDB-Mp-97x">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PkR-ZC-cnK">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PkR-ZC-cnK" id="OUH-7h-xlm">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OJ2-OD-bdQ" id="hgC-WG-J1v"/>
+                                    <outlet property="delegate" destination="G6F-rk-7Qt" id="3SD-SV-7P9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kDB-Mp-97x" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="Esw-KZ-w80"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="kDB-Mp-97x" secondAttribute="bottom" id="F5L-tz-AOG"/>
+                            <constraint firstAttribute="trailing" secondItem="kDB-Mp-97x" secondAttribute="trailing" id="cA8-oz-xai"/>
+                            <constraint firstItem="vnf-Ou-Pr9" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="iHN-1G-zot"/>
+                            <constraint firstItem="vnf-Ou-Pr9" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="sKR-k7-bOm"/>
+                            <constraint firstItem="kDB-Mp-97x" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="yU7-5R-pk2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W7e-Vv-it7"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="vnf-Ou-Pr9" id="YVv-6t-WnN"/>
+                        <outlet property="tableViewCoordinator" destination="KPJ-z9-3dn" id="FwQ-56-LOI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <customObject id="OJ2-OD-bdQ" customClass="ScoreBoardTableDataSource" customModule="RightDirection" customModuleProvider="target"/>
+                <customObject id="G6F-rk-7Qt" customClass="ScoreBoardTableDelegate" customModule="RightDirection" customModuleProvider="target"/>
+                <customObject id="KPJ-z9-3dn" customClass="ScoreBoardTableCoordinator" customModule="RightDirection" customModuleProvider="target">
+                    <connections>
+                        <outlet property="dataSource" destination="OJ2-OD-bdQ" id="g4X-Gd-69i"/>
+                        <outlet property="delegate" destination="G6F-rk-7Qt" id="Qot-WN-4xh"/>
+                        <outlet property="tableView" destination="kDB-Mp-97x" id="VLb-8T-03M"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1562" y="360"/>
         </scene>
