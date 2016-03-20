@@ -38,7 +38,7 @@ class ScoreManager {
     
     if let items = NSUserDefaults.standardUserDefaults().objectForKey(self.saveKey) as? NSData,
             data = NSKeyedUnarchiver.unarchiveObjectWithData(items) as? [ScoreItem] {
-      results = data
+      results = data.sort({ $0.scoreValue > $1.scoreValue })
     }
     
     return results

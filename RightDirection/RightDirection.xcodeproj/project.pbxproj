@@ -36,6 +36,11 @@
 		2795DCD31C8F0E5900F4380F /* directionsSeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 2795DCD21C8F0E5900F4380F /* directionsSeed.json */; };
 		2795DCD51C8F334300F4380F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795DCD41C8F334300F4380F /* DataSource.swift */; };
 		2795DCD71C8F34DB00F4380F /* DirectionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795DCD61C8F34DB00F4380F /* DirectionsDataSource.swift */; };
+		27991A3C1C9B0A53005A48C2 /* ScoreBoardTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27991A3B1C9B0A53005A48C2 /* ScoreBoardTableDataSource.swift */; };
+		27991A411C9B0BC6005A48C2 /* ScoreBoardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27991A3F1C9B0BC6005A48C2 /* ScoreBoardTableCell.swift */; };
+		27991A421C9B0BC6005A48C2 /* ScoreBoardTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27991A401C9B0BC6005A48C2 /* ScoreBoardTableCell.xib */; };
+		27991A441C9B1402005A48C2 /* ScoreBoardTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27991A431C9B1402005A48C2 /* ScoreBoardTableDelegate.swift */; };
+		27991A461C9B1466005A48C2 /* ScoreBoardTableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27991A451C9B1466005A48C2 /* ScoreBoardTableCoordinator.swift */; };
 		27A29ED01C99F4B000361107 /* UserInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A29ECF1C99F4B000361107 /* UserInputVC.swift */; };
 		27AE74731C89A7B900CE9D92 /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE74721C89A7B900CE9D92 /* DirectionsView.swift */; };
 		27AE74751C89A7CF00CE9D92 /* DirectionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27AE74741C89A7CF00CE9D92 /* DirectionsView.xib */; };
@@ -94,6 +99,11 @@
 		2795DCD21C8F0E5900F4380F /* directionsSeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = directionsSeed.json; sourceTree = "<group>"; };
 		2795DCD41C8F334300F4380F /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		2795DCD61C8F34DB00F4380F /* DirectionsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsDataSource.swift; sourceTree = "<group>"; };
+		27991A3B1C9B0A53005A48C2 /* ScoreBoardTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardTableDataSource.swift; sourceTree = "<group>"; };
+		27991A3F1C9B0BC6005A48C2 /* ScoreBoardTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardTableCell.swift; sourceTree = "<group>"; };
+		27991A401C9B0BC6005A48C2 /* ScoreBoardTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreBoardTableCell.xib; sourceTree = "<group>"; };
+		27991A431C9B1402005A48C2 /* ScoreBoardTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardTableDelegate.swift; sourceTree = "<group>"; };
+		27991A451C9B1466005A48C2 /* ScoreBoardTableCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardTableCoordinator.swift; sourceTree = "<group>"; };
 		27A29ECF1C99F4B000361107 /* UserInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputVC.swift; sourceTree = "<group>"; };
 		27AE74721C89A7B900CE9D92 /* DirectionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
 		27AE74741C89A7CF00CE9D92 /* DirectionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectionsView.xib; sourceTree = "<group>"; };
@@ -220,6 +230,7 @@
 				27EE73661C88197D00A0FD3F /* GameBoardViewController.swift */,
 				275ACFED1C98236D00B544C2 /* GameBoardExtension.swift */,
 				27A29ECF1C99F4B000361107 /* UserInputVC.swift */,
+				27991A3A1C9B0A49005A48C2 /* ScoreTable */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +251,18 @@
 				275ACFEB1C980BD900B544C2 /* IntToTime.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		27991A3A1C9B0A49005A48C2 /* ScoreTable */ = {
+			isa = PBXGroup;
+			children = (
+				27991A3B1C9B0A53005A48C2 /* ScoreBoardTableDataSource.swift */,
+				27991A3F1C9B0BC6005A48C2 /* ScoreBoardTableCell.swift */,
+				27991A401C9B0BC6005A48C2 /* ScoreBoardTableCell.xib */,
+				27991A431C9B1402005A48C2 /* ScoreBoardTableDelegate.swift */,
+				27991A451C9B1466005A48C2 /* ScoreBoardTableCoordinator.swift */,
+			);
+			path = ScoreTable;
 			sourceTree = "<group>";
 		};
 		A2FFBF28ADE55DE346300EA0 /* Frameworks */ = {
@@ -349,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27991A421C9B0BC6005A48C2 /* ScoreBoardTableCell.xib in Resources */,
 				2795DCD31C8F0E5900F4380F /* directionsSeed.json in Resources */,
 				27AE74751C89A7CF00CE9D92 /* DirectionsView.xib in Resources */,
 				277AA5C81C947DD7001D4971 /* MessageView.xib in Resources */,
@@ -477,6 +501,7 @@
 				27AE74771C89AA7900CE9D92 /* DirectionItemView.swift in Sources */,
 				275ACFEE1C98236D00B544C2 /* GameBoardExtension.swift in Sources */,
 				2795DCD11C8EEF4800F4380F /* DirectionEntity.swift in Sources */,
+				27991A411C9B0BC6005A48C2 /* ScoreBoardTableCell.swift in Sources */,
 				27AE747F1C8C479000CE9D92 /* PinView.swift in Sources */,
 				277C3A321C91C9E700E3BE93 /* SwipeGestureExtension.swift in Sources */,
 				27AE747D1C8A192800CE9D92 /* DirectionItem.swift in Sources */,
@@ -492,12 +517,15 @@
 				27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */,
 				273E697D1C8395330015C245 /* GameTabViewController.swift in Sources */,
 				277C3A301C91B98500E3BE93 /* Constants.swift in Sources */,
+				27991A3C1C9B0A53005A48C2 /* ScoreBoardTableDataSource.swift in Sources */,
 				2795DCD71C8F34DB00F4380F /* DirectionsDataSource.swift in Sources */,
+				27991A461C9B1466005A48C2 /* ScoreBoardTableCoordinator.swift in Sources */,
 				2795DCCF1C8EEF1800F4380F /* DirectionsManager.swift in Sources */,
 				27EE736B1C885C0200A0FD3F /* RandomInt.swift in Sources */,
 				275ACFF01C98478E00B544C2 /* ScoreItem.swift in Sources */,
 				27215C591C81EB4A005D66BE /* ScoreBoardViewController.swift in Sources */,
 				275ACFEC1C980BD900B544C2 /* IntToTime.swift in Sources */,
+				27991A441C9B1402005A48C2 /* ScoreBoardTableDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
