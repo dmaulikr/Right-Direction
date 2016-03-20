@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScoreBoardViewController: RootViewController {
+class ScoreBoardViewController: UIViewController {
 
   @IBOutlet weak var infoLabel: UILabel!
   @IBOutlet weak var tableViewCoordinator: ScoreBoardTableCoordinator!

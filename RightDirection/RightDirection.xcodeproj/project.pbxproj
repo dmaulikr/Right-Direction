@@ -13,7 +13,6 @@
 		27215C391C81E50C005D66BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27215C381C81E50C005D66BE /* Assets.xcassets */; };
 		27215C3C1C81E50C005D66BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27215C3A1C81E50C005D66BE /* LaunchScreen.storyboard */; };
 		27215C471C81E50C005D66BE /* RightDirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C461C81E50C005D66BE /* RightDirectionTests.swift */; };
-		27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C541C81EB0A005D66BE /* RootViewController.swift */; };
 		27215C571C81EB1B005D66BE /* GameDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */; };
 		27215C591C81EB4A005D66BE /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */; };
 		2722873D1C96A62F003694EE /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2722873C1C96A62F003694EE /* TimerManager.swift */; };
@@ -76,7 +75,6 @@
 		27215C421C81E50C005D66BE /* RightDirectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightDirectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27215C461C81E50C005D66BE /* RightDirectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDirectionTests.swift; sourceTree = "<group>"; };
 		27215C481C81E50C005D66BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27215C541C81EB0A005D66BE /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDashboardViewController.swift; sourceTree = "<group>"; };
 		27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 		2722873C1C96A62F003694EE /* TimerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 		27215C531C81EA82005D66BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				27215C541C81EB0A005D66BE /* RootViewController.swift */,
 				27215C561C81EB1B005D66BE /* GameDashboardViewController.swift */,
 				27215C581C81EB4A005D66BE /* ScoreBoardViewController.swift */,
 				273E697C1C8395330015C245 /* GameTabViewController.swift */,
@@ -514,7 +511,6 @@
 				27A29ED01C99F4B000361107 /* UserInputVC.swift in Sources */,
 				2722873D1C96A62F003694EE /* TimerManager.swift in Sources */,
 				27215C301C81E50C005D66BE /* AppDelegate.swift in Sources */,
-				27215C551C81EB0A005D66BE /* RootViewController.swift in Sources */,
 				273E697D1C8395330015C245 /* GameTabViewController.swift in Sources */,
 				277C3A301C91B98500E3BE93 /* Constants.swift in Sources */,
 				27991A3C1C9B0A53005A48C2 /* ScoreBoardTableDataSource.swift in Sources */,

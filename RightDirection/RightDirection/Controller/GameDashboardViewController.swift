@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameDashboardViewController: RootViewController {
+class GameDashboardViewController: UIViewController {
 
   @IBOutlet weak var startButton: UIButton!
   
