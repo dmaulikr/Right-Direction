@@ -8,28 +8,27 @@
 
 import UIKit
 
-class ScoreBoardViewController: RootViewController {
+class ScoreBoardViewController: UIViewController {
 
+  @IBOutlet weak var infoLabel: UILabel!
+  @IBOutlet weak var tableViewCoordinator: ScoreBoardTableCoordinator!
   override func viewDidLoad() {
     super.viewDidLoad()
 
     self.title = NSLocalizedString("Scoreboard", comment: "Scoreboard")
+    self.infoLabel.text = NSLocalizedString("No scores yet, play the game first!", comment: "No scores yet, play the game first!")
+    self.tableViewCoordinator.setup()
   }
 
-  override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+  func reloadData() {
+    let scoreManager = ScoreManager()
+    self.tableViewCoordinator.reloadData(scoreManager.getScores())
   }
   
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
 
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
+    self.reloadData()
   }
-  */
-
+  
 }
