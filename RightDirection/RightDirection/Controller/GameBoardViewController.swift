@@ -120,7 +120,7 @@ class GameBoardViewController: UIViewController {
   }
   
   func addSwipeRecognizerForDirection(direction: UISwipeGestureRecognizerDirection) {
-    let swipeGesture = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipe:"))
+    let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(GameBoardViewController.handleSwipe(_:)))
     swipeGesture.direction = direction //it's also possible to pass whole array here, but apparently in that case only left and right swipe works (Xcode 7.2)
     self.view.addGestureRecognizer(swipeGesture)
   }

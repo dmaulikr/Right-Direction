@@ -9,6 +9,6 @@
 import Foundation
 
 protocol DataSource {
-  typealias U
+  associatedtype U
   func prepareData() -> [U]
 }
