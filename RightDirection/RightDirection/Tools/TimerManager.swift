@@ -18,7 +18,7 @@ class TimerManager {
   func startCountdown(duration: Int) {
     self.time = duration
     self.timer?.invalidate()
-    self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countdown"), userInfo: nil, repeats: true)
+    self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(TimerManager.countdown), userInfo: nil, repeats: true)
   }
   
   @objc func countdown() {

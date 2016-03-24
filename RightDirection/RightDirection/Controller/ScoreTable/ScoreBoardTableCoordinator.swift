@@ -24,7 +24,13 @@ class ScoreBoardTableCoordinator: NSObject {
   func reloadData(data: [ScoreItem]) {
     self.dataSource.data = data;
     self.delegate.data = data;
-    self.tableView.reloadData()
+    if data.count == 0 {
+      self.tableView.hidden = true
+    }
+    else {
+      self.tableView.hidden = false
+      self.tableView.reloadData()
+    }
   }
   
   func registerCells() {

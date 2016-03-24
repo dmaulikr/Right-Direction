@@ -19,7 +19,8 @@ class MessageView: UIView {
   
   // Simple view that shows messages from array with delay, after finish it will 
   // fire completion closure
-  func showMessages(var messages: [String]) {
+  func showMessages(input: [String]) {
+    var messages = input
     if messages.count > 0 {
       var currentText = ""
 

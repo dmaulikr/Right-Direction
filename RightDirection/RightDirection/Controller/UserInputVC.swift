@@ -14,7 +14,7 @@ extension UIViewController {
     let scoreController = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
     scoreController.addTextFieldWithConfigurationHandler { (textfield) -> Void in
       textfield.placeholder = NSLocalizedString("Enter your name", comment: "Enter your name")
-      textfield.addTarget(self, action: Selector("alertTextFieldDidChange:"), forControlEvents: .EditingChanged)
+      textfield.addTarget(self, action: #selector(UIViewController.alertTextFieldDidChange(_:)), forControlEvents: .EditingChanged)
     }
     
     let okAction = UIAlertAction(title: NSLocalizedString("Save", comment: "Save"), style: .Default) { (action) -> Void in

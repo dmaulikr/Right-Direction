@@ -22,7 +22,11 @@ class ScoreBoardViewController: UIViewController {
 
   func reloadData() {
     let scoreManager = ScoreManager()
-    self.tableViewCoordinator.reloadData(scoreManager.getScores())
+    let scores = scoreManager.getScores()
+    if scores.count == 0 {
+      self.infoLabel.hidden = false
+    }
+    self.tableViewCoordinator.reloadData(scores)
   }
   
   override func viewDidAppear(animated: Bool) {
